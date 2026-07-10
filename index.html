@@ -115,7 +115,7 @@
 .cal-cc{--cc-green:#19a56b;--cc-green-dark:#0b7a4f;--cc-green-soft:#eaf8f0;--cc-line:#d6e6db;--cc-muted:#66736b;--cc-ink:#10131a;--cc-red:#a43e36;--cc-yellow:#8a6400;border:2px solid var(--cc-green);border-radius:28px;padding:24px;background:#fff;box-shadow:0 18px 46px rgba(20,80,55,.10);color:var(--cc-ink);font-family:Inter,Arial,Helvetica,sans-serif}
 .cal-cc *{box-sizing:border-box}.cal-cc button{font:inherit}
 .cal-cc-header{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}.cal-cc-header h3{font-size:clamp(32px,4vw,48px);line-height:1;letter-spacing:-.045em;margin:0 0 8px}.cal-cc-lead{font-size:17px;font-weight:750;color:#26332c;margin:0 0 4px}.cal-cc-small{font-size:15px;line-height:1.45;color:var(--cc-muted);margin:0}.cal-cc-live{display:inline-flex;align-items:center;gap:7px;border:1px solid #cfe3d5;border-radius:999px;padding:8px 12px;color:#24563e;background:#fbfffc;font-size:13px;font-weight:800;white-space:nowrap}.cal-cc-live i{width:8px;height:8px;border-radius:50%;background:var(--cc-green);box-shadow:0 0 0 5px rgba(25,165,107,.11)}
-.cal-cc-filters{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 18px}.cal-cc-filters span{padding:9px 14px;border:1px solid #cfe3d5;border-radius:13px;font-weight:700;color:#24563e;background:#fbfffc;font-size:13px}
+.cal-cc-filters{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 18px}.cal-cc-filter{position:relative}.cal-cc-filter-btn{appearance:none;border:1px solid #cfe3d5;border-radius:14px;padding:10px 14px;background:#fbfffc;color:#24563e;font-size:13px;font-weight:800;display:inline-flex;align-items:center;gap:10px;cursor:pointer;min-height:40px;transition:border-color .18s ease,box-shadow .18s ease,transform .18s ease}.cal-cc-filter-btn:hover{border-color:#b8dcc6;transform:translateY(-1px)}.cal-cc-filter-btn:focus-visible{outline:3px solid rgba(25,165,107,.3);outline-offset:2px}.cal-cc-filter-btn.open{border-color:var(--cc-green);box-shadow:0 8px 18px rgba(20,80,55,.10)}.cal-cc-filter-label{font-weight:700;color:#5b6a60}.cal-cc-filter-value{font-weight:800;color:#24563e}.cal-cc-caret{font-size:11px;color:#4e5d54}.cal-cc-menu{position:absolute;top:calc(100% + 8px);left:0;min-width:230px;background:#fff;border:1px solid #d6e6db;border-radius:16px;padding:8px;box-shadow:0 18px 36px rgba(20,80,55,.12);display:none;z-index:20}.cal-cc-filter.open .cal-cc-menu{display:block;animation:calMenuIn .18s ease}.cal-cc-option{appearance:none;width:100%;border:0;background:transparent;border-radius:12px;padding:10px 12px;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px;color:#294637;cursor:pointer}.cal-cc-option:hover,.cal-cc-option:focus-visible{background:#f3fbf6;outline:none}.cal-cc-option.active{background:#eaf8f0;color:#0b7a4f;font-weight:800}.cal-cc-option small{color:#708078;font-size:11px;font-weight:700}.cal-cc-status-note{font-size:12px;color:#748178;font-weight:700;align-self:center}@keyframes calMenuIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
 .cal-cc-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:16px}.cal-cc-card{appearance:none;border:1px solid #cfe3d5;border-radius:18px;padding:14px;min-height:166px;background:#fff;text-align:left;cursor:pointer;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,background-color .22s ease;animation:calCardEnter .55s ease both}.cal-cc-card:nth-child(2){animation-delay:.08s}.cal-cc-card:nth-child(3){animation-delay:.16s}.cal-cc-card:nth-child(4){animation-delay:.24s}.cal-cc-card:hover{transform:translateY(-4px);box-shadow:0 11px 25px rgba(20,80,55,.11);border-color:#b8dcc6}.cal-cc-card:focus-visible{outline:3px solid rgba(25,165,107,.3);outline-offset:3px}.cal-cc-card.active{border:2px solid var(--cc-green);box-shadow:0 12px 28px rgba(25,165,107,.15);background:linear-gradient(180deg,#fff 0%,#f7fffa 100%)}.cal-cc-card.active:after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--cc-green);animation:calBarGrow .25s ease}.cal-cc-icon{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--cc-green-soft);color:var(--cc-green-dark);font-size:22px;font-weight:850;margin-bottom:12px;transition:transform .22s ease}.cal-cc-card:hover .cal-cc-icon,.cal-cc-card.active .cal-cc-icon{transform:scale(1.07)}.cal-cc-label{font-size:14px;font-weight:800;color:#36443c;margin-bottom:7px}.cal-cc-num{font-size:42px;line-height:1;font-weight:850;color:#122119;margin-bottom:7px}.cal-cc-desc{font-size:13px;line-height:1.32;color:var(--cc-muted)}
 .cal-cc-queue{border:1px solid var(--cc-line);border-radius:20px;padding:16px;background:#fbfefc}.cal-cc-qtop{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:12px}.cal-cc-eyebrow{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#0b8a58;font-weight:850;margin-bottom:5px}.cal-cc-qtop h4{font-size:21px;letter-spacing:-.02em;margin:0}.cal-cc-hint{font-size:12px;color:#748178;font-weight:700}.cal-cc-items{display:grid;grid-template-columns:1fr 1fr;gap:10px;min-height:204px}.cal-cc-item{border:1px solid #dce9e0;border-radius:14px;padding:13px;background:#fff;animation:calItemIn .28s ease both}.cal-cc-item h5{font-size:14px;margin:0 0 6px;color:#26332c}.cal-cc-item p{font-size:13px;line-height:1.38;color:#627068;margin:0 0 10px}.cal-cc-tags{display:flex;gap:6px;flex-wrap:wrap}.cal-cc-tag{font-size:10px;font-weight:800;border-radius:999px;padding:6px 8px;background:#e9f8ef;color:var(--cc-green-dark);border:1px solid #c9ead7}.cal-cc-tag.red{background:#fff1f0;color:var(--cc-red);border-color:#f1c7c3}.cal-cc-tag.yellow{background:#fff8e6;color:var(--cc-yellow);border-color:#f1dc9c}.cal-cc-tag.gray{background:#f2f4f3;color:#5e6a63;border-color:#dbe1de}.cal-cc-queue.switching .cal-cc-item{animation:calFadeDown .15s ease both}
 .cal-cc-footer{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.cal-cc-footer article{border:1px solid var(--cc-line);border-radius:18px;padding:14px;background:#fff}.cal-cc-footer strong{display:block;font-size:15px;margin-bottom:4px}.cal-cc-footer p{font-size:13px;line-height:1.38;color:var(--cc-muted);margin:0}
@@ -143,7 +143,7 @@
 <div class="section-heading reveal">
 <p class="eyebrow">What Cal proves</p>
 <h2>Clarity before dispatch.</h2>
-<p>Built around Doug Isley’s plumbing workflow, Cal demonstrates a reusable AtlasFlow pattern for field service: a messy request becomes AI triage, a structured job record, Operational Viewer visibility, human review, and a clear recommended next action.</p>
+<p>Built around the L.E. Isley & Sons Plumbing workflow, Cal demonstrates a reusable AtlasFlow pattern for field service: a messy request becomes AI triage, a structured job record, Operational Viewer visibility, human review, and a clear recommended next action.</p>
 </div><figure aria-label="Interactive Cal Command Center" class="command-center-preview cal-cc-figure reveal">
 <div class="cal-cc" id="calCommandCenter">
 <div class="cal-cc-header">
@@ -155,7 +155,31 @@
 <span class="cal-cc-live"><i></i> Today</span>
 </div>
 <div aria-label="Current filters" class="cal-cc-filters">
-<span>Jul 6–12, 2026</span><span>Today</span><span>All service requests</span>
+<div class="cal-cc-filter" data-filter="date">
+<button aria-expanded="false" aria-haspopup="true" class="cal-cc-filter-btn" id="calDateBtn" type="button">
+<span class="cal-cc-filter-label">Date</span>
+<span class="cal-cc-filter-value" id="calDateValue">Today</span>
+<span aria-hidden="true" class="cal-cc-caret">▾</span>
+</button>
+<div aria-label="Date options" class="cal-cc-menu" id="calDateMenu" role="menu">
+<button class="cal-cc-option active" data-filter-type="date" data-value="today" role="menuitemradio" type="button"><span>Today</span><small>Current day view</small></button>
+<button class="cal-cc-option" data-filter-type="date" data-value="week" role="menuitemradio" type="button"><span>This week</span><small>Jul 6–12, 2026</small></button>
+<button class="cal-cc-option" data-filter-type="date" data-value="next7" role="menuitemradio" type="button"><span>Next 7 days</span><small>Forward-looking queue</small></button>
+</div>
+</div>
+<div class="cal-cc-filter" data-filter="type">
+<button aria-expanded="false" aria-haspopup="true" class="cal-cc-filter-btn" id="calTypeBtn" type="button">
+<span class="cal-cc-filter-label">Service request type</span>
+<span class="cal-cc-filter-value" id="calTypeValue">All service requests</span>
+<span aria-hidden="true" class="cal-cc-caret">▾</span>
+</button>
+<div aria-label="Service request type options" class="cal-cc-menu" id="calTypeMenu" role="menu">
+<button class="cal-cc-option active" data-filter-type="type" data-value="all" role="menuitemradio" type="button"><span>All service requests</span><small>Full queue</small></button>
+<button class="cal-cc-option" data-filter-type="type" data-value="emergency" role="menuitemradio" type="button"><span>Emergency & urgent</span><small>Risk-heavy work</small></button>
+<button class="cal-cc-option" data-filter-type="type" data-value="followups" role="menuitemradio" type="button"><span>Follow-ups & callbacks</span><small>Communication-heavy work</small></button>
+</div>
+</div>
+<div class="cal-cc-status-note" id="calFilterSummary">Showing today across all service requests</div>
 </div>
 <div aria-label="Cal work categories" class="cal-cc-cards" role="tablist">
 <button aria-controls="cal-detail-items" aria-selected="true" class="cal-cc-card active" data-key="emergency" id="cal-tab-emergency" role="tab" type="button">
@@ -466,40 +490,261 @@
   </script>
 <script>
 (function(){
-const data={
- emergency:{eyebrow:'Emergency requests',title:'2 emergency requests need immediate action',hint:'Dispatch and confirm customer contact now',items:[
-  {title:'Mrs. Thompson · Ceiling leak',description:'Water is still leaking through the ceiling below an upstairs bathroom after an attempted shutoff.',tags:[['Emergency','red'],['Dispatch now','red'],['Call customer','gray']]},
-  {title:'Robert Jenkins · Water heater leak',description:'Basement water heater is actively leaking. Customer is home after lunch and requests same-day arrival.',tags:[['Same day','yellow'],['Confirm arrival',''],['Protect flooring','gray']]}
- ]},
- followups:{eyebrow:'Follow-ups due',title:'3 follow-ups are due today',hint:'Resolve overdue callbacks and customer updates',items:[
-  {title:'Karen Mills · Callback overdue',description:'The office promised a 9:00 AM callback about estimate status. No follow-up has been logged.',tags:[['Overdue','red'],['Customer callback',''],['Owner visibility','gray']]},
-  {title:'Oak Street HOA · Quote follow-up',description:'The customer asked whether replacement options are available before approving repair work.',tags:[['Due today','yellow'],['Send options',''],['Needs response','gray']]},
-  {title:'Green Family · Appointment check-in',description:'The customer requested a scheduling update if the technician is running more than 30 minutes late.',tags:[['Today','yellow'],['Text update',''],['Service window','gray']]}
- ]},
- review:{eyebrow:'Needs review',title:'2 records need office review',hint:'Human judgment is needed before the next step',items:[
-  {title:'Mark Reynolds · Estimate request',description:'Cal created a draft summary, but the office should confirm scope before assigning an estimator.',tags:[['Routine',''],['Prepare summary',''],['Review scope','gray']]},
-  {title:'Technician note · Follow-up',description:'Parts needed and an unresolved issue should become a clear office handoff and tracked next action.',tags:[['Review','yellow'],['Create next action',''],['Parts needed','gray']]}
- ]},
- actions:{eyebrow:'Open actions',title:'5 open actions are waiting on the office',hint:'Complete the recommended next steps below',items:[
-  {title:'Dispatch plumber · Thompson job',description:'Assign the next available emergency technician and confirm the arrival window with the customer.',tags:[['Recommended by Cal',''],['Dispatch','red'],['Priority','yellow']]},
-  {title:'Create office summary · Reynolds',description:'Turn the intake note into a clean estimate handoff for the office manager.',tags:[['Recommended by Cal',''],['Prepare summary',''],['Routine','gray']]},
-  {title:'Confirm arrival · Jenkins',description:'The customer is available after lunch and is waiting for same-day confirmation.',tags:[['Recommended by Cal',''],['Confirm arrival',''],['Same day','yellow']]},
-  {title:'Call back · Karen Mills',description:'Close the overdue callback loop and document the customer response in the job record.',tags:[['Office action','yellow'],['Callback',''],['Overdue','red']]},
-  {title:'Review technician handoff',description:'Convert the unresolved field note into an office follow-up with parts and customer next steps.',tags:[['Office action','yellow'],['Review',''],['Handoff','gray']]}
- ]}
+const labels={
+  date:{today:'Today',week:'This week',next7:'Next 7 days'},
+  type:{all:'All service requests',emergency:'Emergency & urgent',followups:'Follow-ups & callbacks'}
+};
+const datasets={
+  'today|all':{
+    emergency:{count:2,desc:'Active water or property risk',eyebrow:'Emergency requests',title:'2 emergency requests need immediate action',hint:'Dispatch and confirm customer contact now',items:[
+      {title:'Mrs. Thompson · Ceiling leak',description:'Water is still leaking through the ceiling below an upstairs bathroom after an attempted shutoff.',tags:[['Emergency','red'],['Dispatch now','red'],['Call customer','gray']]},
+      {title:'Robert Jenkins · Water heater leak',description:'Basement water heater is actively leaking. Customer is home after lunch and requests same-day arrival.',tags:[['Same day','yellow'],['Confirm arrival',''],['Protect flooring','gray']]}
+    ]},
+    followups:{count:3,desc:'1 customer callback overdue',eyebrow:'Follow-ups due',title:'3 follow-ups are due today',hint:'Resolve overdue callbacks and customer updates',items:[
+      {title:'Karen Mills · Callback overdue',description:'The office promised a 9:00 AM callback about estimate status. No follow-up has been logged.',tags:[['Overdue','red'],['Customer callback',''],['Owner visibility','gray']]},
+      {title:'Oak Street HOA · Quote follow-up',description:'The customer asked whether replacement options are available before approving repair work.',tags:[['Due today','yellow'],['Send options',''],['Needs response','gray']]},
+      {title:'Green Family · Appointment check-in',description:'The customer requested a scheduling update if the technician is running more than 30 minutes late.',tags:[['Today','yellow'],['Text update',''],['Service window','gray']]}
+    ]},
+    review:{count:2,desc:'Human judgment required',eyebrow:'Needs review',title:'2 records need office review',hint:'Human judgment is needed before the next step',items:[
+      {title:'Mark Reynolds · Estimate request',description:'Cal created a draft summary, but the office should confirm scope before assigning an estimator.',tags:[['Routine',''],['Prepare summary',''],['Review scope','gray']]},
+      {title:'Technician note · Follow-up',description:'Parts needed and an unresolved issue should become a clear office handoff and tracked next action.',tags:[['Review','yellow'],['Create next action',''],['Parts needed','gray']]}
+    ]},
+    actions:{count:5,desc:'3 recommended by Cal',eyebrow:'Open actions',title:'5 open actions are waiting on the office',hint:'Complete the recommended next steps below',items:[
+      {title:'Dispatch plumber · Thompson job',description:'Assign the next available emergency technician and confirm the arrival window with the customer.',tags:[['Recommended by Cal',''],['Dispatch','red'],['Priority','yellow']]},
+      {title:'Create office summary · Reynolds',description:'Turn the intake note into a clean estimate handoff for the office manager.',tags:[['Recommended by Cal',''],['Prepare summary',''],['Routine','gray']]},
+      {title:'Confirm arrival · Jenkins',description:'The customer is available after lunch and is waiting for same-day confirmation.',tags:[['Recommended by Cal',''],['Confirm arrival',''],['Same day','yellow']]},
+      {title:'Call back · Karen Mills',description:'Close the overdue callback loop and document the customer response in the job record.',tags:[['Office action','yellow'],['Callback',''],['Overdue','red']]},
+      {title:'Review technician handoff',description:'Convert the unresolved field note into an office follow-up with parts and customer next steps.',tags:[['Office action','yellow'],['Review',''],['Handoff','gray']]}
+    ]}
+  },
+  'today|emergency':{
+    emergency:{count:2,desc:'Active water or property risk',eyebrow:'Emergency requests',title:'2 urgent service requests are in focus',hint:'Filtered to emergency and urgent work only',items:[
+      {title:'Mrs. Thompson · Ceiling leak',description:'Water is still leaking through the ceiling below an upstairs bathroom after an attempted shutoff.',tags:[['Emergency','red'],['Dispatch now','red'],['Call customer','gray']]},
+      {title:'Robert Jenkins · Water heater leak',description:'Basement water heater is actively leaking. Customer is home after lunch and requests same-day arrival.',tags:[['Same day','yellow'],['Confirm arrival',''],['Protect flooring','gray']]}
+    ]},
+    followups:{count:1,desc:'Urgent customer update pending',eyebrow:'Follow-ups due',title:'1 follow-up supports urgent work today',hint:'Keep emergency customers informed',items:[
+      {title:'Jenkins family · Arrival update',description:'Confirm technician ETA after lunch so the customer can stay on site for the urgent water heater issue.',tags:[['Urgent','red'],['Confirm arrival',''],['Customer update','gray']]}
+    ]},
+    review:{count:1,desc:'Escalation choice required',eyebrow:'Needs review',title:'1 emergency record needs owner review',hint:'Human judgment is needed before escalation',items:[
+      {title:'Cedar Clinic · Main line backup',description:'Cal marked the issue as urgent, but the office should confirm whether after-hours escalation is needed.',tags:[['Urgent','red'],['Escalate?','yellow'],['Owner review','gray']]}
+    ]},
+    actions:{count:3,desc:'Immediate next steps',eyebrow:'Open actions',title:'3 urgent actions are waiting on the office',hint:'Move on dispatch, ETA, and customer communication',items:[
+      {title:'Dispatch emergency technician · Thompson',description:'Assign the first available emergency plumber and lock in the route.',tags:[['Dispatch','red'],['Immediate','yellow']]},
+      {title:'Confirm arrival · Jenkins',description:'Call the customer and confirm a same-day service window.',tags:[['Customer call',''],['Same day','yellow']]},
+      {title:'Review escalation · Cedar Clinic',description:'Decide whether to push the main line backup into after-hours escalation.',tags:[['Decision','yellow'],['Urgent','red']]}
+    ]}
+  },
+  'today|followups':{
+    emergency:{count:1,desc:'Urgent callback tied to risk',eyebrow:'Emergency requests',title:'1 emergency callback remains tied to active risk',hint:'A communication-heavy view can still surface urgent jobs',items:[
+      {title:'Robert Jenkins · Water heater leak',description:'The job is urgent and also requires a same-day customer confirmation.',tags:[['Urgent','red'],['Callback',''],['Same day','yellow']]}
+    ]},
+    followups:{count:3,desc:'Communication-heavy items',eyebrow:'Follow-ups due',title:'3 follow-ups are due today',hint:'Focus on callbacks, updates, and office communication',items:[
+      {title:'Karen Mills · Callback overdue',description:'The office promised a 9:00 AM callback about estimate status. No follow-up has been logged.',tags:[['Overdue','red'],['Customer callback',''],['Owner visibility','gray']]},
+      {title:'Oak Street HOA · Quote follow-up',description:'The customer asked whether replacement options are available before approving repair work.',tags:[['Due today','yellow'],['Send options',''],['Needs response','gray']]},
+      {title:'Green Family · Appointment check-in',description:'The customer requested a scheduling update if the technician is running more than 30 minutes late.',tags:[['Today','yellow'],['Text update',''],['Service window','gray']]}
+    ]},
+    review:{count:2,desc:'Handoffs and summaries',eyebrow:'Needs review',title:'2 communication-related items need review',hint:'Review messages and office handoffs before sending',items:[
+      {title:'Technician note · Follow-up',description:'The field note should become a clean office handoff before any outbound update is sent.',tags:[['Review','yellow'],['Handoff','gray']]},
+      {title:'Mark Reynolds · Estimate summary',description:'The customer-facing summary needs office approval before it goes out.',tags:[['Prepare summary',''],['Approve message','gray']]}
+    ]},
+    actions:{count:4,desc:'Next communication steps',eyebrow:'Open actions',title:'4 communication-focused actions are waiting',hint:'Send updates, close loops, and document responses',items:[
+      {title:'Call back · Karen Mills',description:'Close the overdue callback loop and document the response.',tags:[['Callback',''],['Overdue','red']]},
+      {title:'Send options · Oak Street HOA',description:'Respond with replacement options and next pricing steps.',tags:[['Send options',''],['Due today','yellow']]},
+      {title:'Text update · Green Family',description:'Send a proactive scheduling update if the tech is delayed.',tags:[['Text update',''],['Service window','gray']]},
+      {title:'Confirm arrival · Jenkins',description:'Keep the urgent customer informed about arrival timing.',tags:[['Urgent','red'],['Confirm arrival','']]}
+    ]}
+  },
+  'week|all':{
+    emergency:{count:4,desc:'Urgent jobs this week',eyebrow:'Emergency requests',title:'4 emergency requests are on this week’s queue',hint:'Use the weekly view to anticipate spikes in urgent work',items:[
+      {title:'Mrs. Thompson · Ceiling leak',description:'Active leak requiring immediate dispatch coordination.',tags:[['Emergency','red'],['Dispatch now','red']]},
+      {title:'Robert Jenkins · Water heater leak',description:'Active leak with same-day customer availability.',tags:[['Same day','yellow'],['Confirm arrival','']]},
+      {title:'Cedar Clinic · Main line backup',description:'Commercial request with health and sanitation risk.',tags:[['Urgent','red'],['Commercial','gray']]},
+      {title:'Lakeside Condo · Burst hose bib',description:'Exterior line issue causing water loss and property concern.',tags:[['Urgent','red'],['Schedule now','yellow']]}
+    ]},
+    followups:{count:6,desc:'Customer communication due',eyebrow:'Follow-ups due',title:'6 follow-ups are due this week',hint:'Weekly follow-ups keep estimates and service windows moving',items:[
+      {title:'Karen Mills · Callback overdue',description:'Estimate status call remains open.',tags:[['Overdue','red'],['Callback','']]},
+      {title:'Oak Street HOA · Quote follow-up',description:'Customer is waiting on replacement options.',tags:[['Due this week','yellow'],['Send options','']]},
+      {title:'Green Family · Appointment check-in',description:'Requested scheduling update for possible delays.',tags:[['This week','yellow'],['Text update','']]},
+      {title:'Peterson Home · Drain scope',description:'Follow up on whether the customer wants the optional camera inspection.',tags:[['Optional upsell','gray'],['Customer decision','']]},
+      {title:'Summit Dental · Bid response',description:'Office should answer scope questions before Friday.',tags:[['Commercial','gray'],['Due Friday','yellow']]},
+      {title:'Maple Retail · Repair approval',description:'Customer needs approval paperwork resent.',tags:[['Resend docs',''],['This week','yellow']]}
+    ]},
+    review:{count:5,desc:'Office decisions pending',eyebrow:'Needs review',title:'5 records need office review this week',hint:'These items need judgment before dispatch or follow-up',items:[
+      {title:'Mark Reynolds · Estimate request',description:'Confirm scope before assigning an estimator.',tags:[['Review scope','gray']]},
+      {title:'Technician note · Follow-up',description:'Convert the field note into a tracked handoff.',tags:[['Create next action',''],['Review','yellow']]},
+      {title:'Cedar Clinic · Escalation path',description:'Decide on after-hours support coverage.',tags:[['Escalation','yellow'],['Commercial','gray']]},
+      {title:'Lakeside Condo · Access note',description:'Review tenant access constraints before dispatching.',tags:[['Access issue','gray']]},
+      {title:'Peterson Home · Proposal revision',description:'Customer asked for an alternate repair option.',tags:[['Proposal change',''],['Review','yellow']]}
+    ]},
+    actions:{count:9,desc:'Weekly office work queued',eyebrow:'Open actions',title:'9 actions are waiting across this week',hint:'Recommended next steps help the office stay ahead',items:[
+      {title:'Dispatch plumber · Thompson',description:'Assign emergency technician.',tags:[['Dispatch','red']]},
+      {title:'Confirm arrival · Jenkins',description:'Lock in service window.',tags:[['Same day','yellow']]},
+      {title:'Call back · Karen Mills',description:'Return the overdue callback.',tags:[['Callback',''],['Overdue','red']]},
+      {title:'Send options · Oak Street HOA',description:'Share repair vs. replacement options.',tags:[['Send options','']]},
+      {title:'Review handoff · Technician note',description:'Create a clear office next step.',tags:[['Review','yellow']]},
+      {title:'Escalate commercial backup',description:'Confirm after-hours response plan.',tags:[['Urgent','red']]}
+    ]}
+  },
+  'week|emergency':{
+    emergency:{count:4,desc:'Urgent jobs this week',eyebrow:'Emergency requests',title:'4 emergency and urgent jobs are on this week’s queue',hint:'This filter keeps the weekly focus on high-risk work',items:[
+      {title:'Mrs. Thompson · Ceiling leak',description:'Active leak requiring immediate dispatch coordination.',tags:[['Emergency','red']]},
+      {title:'Robert Jenkins · Water heater leak',description:'Active leak with same-day customer availability.',tags:[['Same day','yellow']]},
+      {title:'Cedar Clinic · Main line backup',description:'Commercial request with health and sanitation risk.',tags:[['Commercial','gray'],['Urgent','red']]},
+      {title:'Lakeside Condo · Burst hose bib',description:'Exterior line issue causing water loss and property concern.',tags:[['Urgent','red'],['Schedule now','yellow']]}
+    ]},
+    followups:{count:2,desc:'Updates tied to urgent work',eyebrow:'Follow-ups due',title:'2 follow-ups support urgent work this week',hint:'These updates keep high-risk customers informed',items:[
+      {title:'Jenkins family · Arrival update',description:'Same-day status update for the urgent water heater issue.',tags:[['Urgent','red']]},
+      {title:'Cedar Clinic · Escalation callback',description:'Confirm decision-maker availability for after-hours approval.',tags:[['Commercial','gray'],['Urgent','red']]}
+    ]},
+    review:{count:2,desc:'Escalation choices pending',eyebrow:'Needs review',title:'2 urgent records need office review this week',hint:'Review whether escalation or special routing is needed',items:[
+      {title:'Cedar Clinic · Escalation path',description:'Decide whether to approve after-hours support.',tags:[['Escalation','yellow']]},
+      {title:'Lakeside Condo · Access note',description:'Confirm access constraints before dispatching an urgent technician.',tags:[['Access issue','gray']]}
+    ]},
+    actions:{count:5,desc:'Urgent next steps',eyebrow:'Open actions',title:'5 urgent actions are waiting this week',hint:'Dispatch, confirm, and escalate the items below',items:[
+      {title:'Dispatch plumber · Thompson',description:'Assign emergency technician.',tags:[['Dispatch','red']]},
+      {title:'Confirm arrival · Jenkins',description:'Lock in service window.',tags:[['Same day','yellow']]},
+      {title:'Review after-hours plan · Cedar Clinic',description:'Approve or reject escalation.',tags:[['Decision','yellow']]},
+      {title:'Schedule now · Lakeside Condo',description:'Assign next available technician.',tags:[['Urgent','red']]},
+      {title:'Call customer · Thompson',description:'Provide ETA and damage-control guidance.',tags:[['Customer update','']]}
+    ]}
+  },
+  'week|followups':{
+    emergency:{count:1,desc:'Urgent update still visible',eyebrow:'Emergency requests',title:'1 urgent request remains visible in the follow-up queue',hint:'Communication-heavy work still surfaces high-risk exceptions',items:[
+      {title:'Cedar Clinic · Main line backup',description:'Urgent commercial issue with a pending callback on escalation timing.',tags:[['Urgent','red'],['Commercial','gray']]}
+    ]},
+    followups:{count:6,desc:'Weekly customer updates',eyebrow:'Follow-ups due',title:'6 follow-ups are due this week',hint:'Use this filter to work through callback and response obligations',items:[
+      {title:'Karen Mills · Callback overdue',description:'Estimate status call remains open.',tags:[['Overdue','red']]},
+      {title:'Oak Street HOA · Quote follow-up',description:'Customer is waiting on replacement options.',tags:[['Send options','']]},
+      {title:'Green Family · Appointment check-in',description:'Requested scheduling update for possible delays.',tags:[['Text update','']]},
+      {title:'Peterson Home · Drain scope',description:'Ask whether the customer wants the optional camera inspection.',tags:[['Customer decision','gray']]},
+      {title:'Summit Dental · Bid response',description:'Answer scope questions before Friday.',tags:[['Due Friday','yellow']]},
+      {title:'Maple Retail · Repair approval',description:'Resend approval paperwork and confirm receipt.',tags:[['Resend docs','']]}
+    ]},
+    review:{count:3,desc:'Review before responding',eyebrow:'Needs review',title:'3 follow-up records need office review this week',hint:'Review messages and summaries before sending them out',items:[
+      {title:'Technician note · Follow-up',description:'The field note should become a clean office handoff.',tags:[['Handoff','gray']]},
+      {title:'Proposal revision · Peterson Home',description:'Customer asked for a different repair option and new wording.',tags:[['Proposal change','']]},
+      {title:'Commercial bid note · Summit Dental',description:'Confirm scope language before responding.',tags:[['Commercial','gray']]}
+    ]},
+    actions:{count:6,desc:'Communication next steps',eyebrow:'Open actions',title:'6 communication-focused actions are waiting this week',hint:'Send updates, return calls, and keep documentation current',items:[
+      {title:'Call back · Karen Mills',description:'Return the overdue callback.',tags:[['Overdue','red']]},
+      {title:'Send options · Oak Street HOA',description:'Share repair vs. replacement options.',tags:[['Send options','']]},
+      {title:'Text update · Green Family',description:'Send a proactive appointment update.',tags:[['Text update','']]},
+      {title:'Ask approval · Maple Retail',description:'Resend paperwork and request signature.',tags:[['Resend docs','']]},
+      {title:'Answer bid questions · Summit Dental',description:'Close open commercial scope questions.',tags:[['Commercial','gray']]},
+      {title:'Follow up on drain scope · Peterson Home',description:'Document the customer’s choice.',tags:[['Customer decision','gray']]}
+    ]}
+  },
+  'next7|all':{
+    emergency:{count:3,desc:'Upcoming high-risk jobs',eyebrow:'Emergency requests',title:'3 high-risk jobs are projected over the next 7 days',hint:'Use the forward-looking view to prepare the team early',items:[
+      {title:'Cedar Clinic · Main line backup',description:'Likely after-hours escalation if the issue continues.',tags:[['Urgent','red']]},
+      {title:'Lakeside Condo · Burst hose bib',description:'Weather risk could worsen the property impact.',tags:[['Urgent','red']]},
+      {title:'Westover Gym · Boiler relief valve',description:'Customer reported intermittent discharge and wants the next available slot.',tags:[['Monitor','yellow']]}
+    ]},
+    followups:{count:5,desc:'Scheduled office follow-through',eyebrow:'Follow-ups due',title:'5 follow-ups are projected for the next 7 days',hint:'Line up callbacks and communication before the schedule tightens',items:[
+      {title:'Oak Street HOA · Quote follow-up',description:'Replacement decision expected this week.',tags:[['This week','yellow']]},
+      {title:'Summit Dental · Bid response',description:'Commercial reply due before Friday.',tags:[['Due Friday','yellow']]},
+      {title:'Maple Retail · Repair approval',description:'Resend paperwork and request signature.',tags:[['Resend docs','']]},
+      {title:'Westover Gym · Scheduling check-in',description:'Confirm when the customer wants the next available appointment.',tags:[['Schedule','']]},
+      {title:'Peterson Home · Camera scope decision',description:'Customer still evaluating the optional add-on.',tags:[['Decision pending','gray']]}
+    ]},
+    review:{count:4,desc:'Planning decisions pending',eyebrow:'Needs review',title:'4 records need office review over the next 7 days',hint:'Use this view to plan ahead on estimates, routing, and messaging',items:[
+      {title:'Proposal revision · Peterson Home',description:'Customer asked for a different repair path.',tags:[['Proposal change','']]},
+      {title:'Commercial escalation · Cedar Clinic',description:'Decide whether to reserve after-hours capacity.',tags:[['Escalation','yellow']]},
+      {title:'Access note · Lakeside Condo',description:'Review tenant access constraints ahead of scheduling.',tags:[['Access issue','gray']]},
+      {title:'Estimate summary · Mark Reynolds',description:'Review summary before sending later this week.',tags:[['Prepare summary','']]}
+    ]},
+    actions:{count:8,desc:'Projected next steps',eyebrow:'Open actions',title:'8 actions are projected over the next 7 days',hint:'Pre-work now can make the queue easier to execute',items:[
+      {title:'Reserve after-hours slot · Cedar Clinic',description:'Hold capacity if escalation becomes necessary.',tags:[['Escalation','yellow']]},
+      {title:'Prepare estimate summary · Reynolds',description:'Turn notes into a clean handoff.',tags:[['Prepare summary','']]},
+      {title:'Send options · Oak Street HOA',description:'Advance the decision before the week ends.',tags:[['Send options','']]},
+      {title:'Resend approval docs · Maple Retail',description:'Move paperwork forward.',tags:[['Resend docs','']]},
+      {title:'Schedule check-in · Westover Gym',description:'Lock in a likely appointment window.',tags:[['Schedule','']]}
+    ]}
+  },
+  'next7|emergency':{
+    emergency:{count:3,desc:'Upcoming high-risk jobs',eyebrow:'Emergency requests',title:'3 emergency or urgent jobs are projected over the next 7 days',hint:'This view helps Doug prepare staffing against forward risk',items:[
+      {title:'Cedar Clinic · Main line backup',description:'Likely after-hours escalation if the issue continues.',tags:[['Urgent','red']]},
+      {title:'Lakeside Condo · Burst hose bib',description:'Weather risk could worsen the property impact.',tags:[['Urgent','red']]},
+      {title:'Westover Gym · Boiler relief valve',description:'Intermittent issue that could move into urgent status.',tags:[['Monitor','yellow']]}
+    ]},
+    followups:{count:2,desc:'Urgent prep calls',eyebrow:'Follow-ups due',title:'2 follow-ups support projected urgent work',hint:'These calls help prepare for likely high-risk jobs',items:[
+      {title:'Cedar Clinic · Escalation check-in',description:'Confirm if the clinic wants a standby after-hours response.',tags:[['Urgent','red']]},
+      {title:'Westover Gym · Symptom update',description:'Ask whether discharge has worsened before scheduling.',tags:[['Monitor','yellow']]}
+    ]},
+    review:{count:2,desc:'Prep decisions pending',eyebrow:'Needs review',title:'2 urgent records need review over the next 7 days',hint:'Decide whether to pre-reserve capacity or route differently',items:[
+      {title:'Commercial escalation · Cedar Clinic',description:'Reserve after-hours capacity or wait for confirmation.',tags:[['Escalation','yellow']]},
+      {title:'Lakeside Condo · Outdoor freeze risk',description:'Decide whether to advance the visit due to weather.',tags:[['Routing','gray']]}
+    ]},
+    actions:{count:4,desc:'Projected urgent next steps',eyebrow:'Open actions',title:'4 urgent actions are projected over the next 7 days',hint:'A little planning now will reduce scramble later',items:[
+      {title:'Reserve after-hours slot · Cedar Clinic',description:'Hold urgent capacity.',tags:[['Escalation','yellow']]},
+      {title:'Advance schedule · Lakeside Condo',description:'Offer an earlier visit if weather worsens.',tags:[['Urgent','red']]},
+      {title:'Check symptom status · Westover Gym',description:'Monitor whether the issue is intensifying.',tags:[['Monitor','yellow']]},
+      {title:'Review staffing buffer',description:'Confirm that the team has coverage for projected risk.',tags:[['Planning','gray']]}
+    ]}
+  },
+  'next7|followups':{
+    emergency:{count:1,desc:'Urgent item still visible',eyebrow:'Emergency requests',title:'1 urgent record remains visible in the follow-up forecast',hint:'Forward-looking follow-up work can still surface risk',items:[
+      {title:'Cedar Clinic · Main line backup',description:'The office should maintain communication in case escalation becomes necessary.',tags:[['Urgent','red'],['Commercial','gray']]}
+    ]},
+    followups:{count:5,desc:'Upcoming customer communication',eyebrow:'Follow-ups due',title:'5 follow-ups are projected for the next 7 days',hint:'Use the forecast to clear callbacks and customer updates early',items:[
+      {title:'Oak Street HOA · Quote follow-up',description:'Replacement decision expected this week.',tags:[['This week','yellow']]},
+      {title:'Summit Dental · Bid response',description:'Commercial reply due before Friday.',tags:[['Due Friday','yellow']]},
+      {title:'Maple Retail · Repair approval',description:'Resend paperwork and request signature.',tags:[['Resend docs','']]},
+      {title:'Westover Gym · Scheduling check-in',description:'Confirm when the customer wants the next available appointment.',tags:[['Schedule','']]},
+      {title:'Peterson Home · Camera scope decision',description:'Customer still evaluating the optional add-on.',tags:[['Decision pending','gray']]}
+    ]},
+    review:{count:3,desc:'Messages and summaries pending',eyebrow:'Needs review',title:'3 follow-up records need review over the next 7 days',hint:'Review communication before sending it into the field',items:[
+      {title:'Estimate summary · Mark Reynolds',description:'Review summary before sending later this week.',tags:[['Prepare summary','']]},
+      {title:'Commercial bid note · Summit Dental',description:'Confirm wording before replying.',tags:[['Commercial','gray']]},
+      {title:'Proposal revision · Peterson Home',description:'Customer asked for a different repair path.',tags:[['Proposal change','']]}
+    ]},
+    actions:{count:5,desc:'Forecasted communication tasks',eyebrow:'Open actions',title:'5 communication actions are projected over the next 7 days',hint:'These are the next visible office tasks in the forecast',items:[
+      {title:'Send options · Oak Street HOA',description:'Advance the decision before the week ends.',tags:[['Send options','']]},
+      {title:'Resend docs · Maple Retail',description:'Move paperwork forward.',tags:[['Resend docs','']]},
+      {title:'Respond to bid questions · Summit Dental',description:'Close open commercial questions.',tags:[['Commercial','gray']]},
+      {title:'Check schedule · Westover Gym',description:'Confirm appointment preference.',tags:[['Schedule','']]},
+      {title:'Document customer decision · Peterson Home',description:'Capture whether the add-on will move forward.',tags:[['Decision pending','gray']]}
+    ]}
+  }
 };
 function init(){
- const root=document.getElementById('calCommandCenter'); if(!root)return;
- const cards=[...root.querySelectorAll('.cal-cc-card')],panel=root.querySelector('#cal-detail-items'),queue=root.querySelector('#calDetailQueue'),eyebrow=root.querySelector('#calQueueEyebrow'),title=root.querySelector('#calQueueTitle'),hint=root.querySelector('#calQueueHint');
- const escape=s=>String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
- function render(items){panel.innerHTML=items.map((item,i)=>`<article class="cal-cc-item" style="animation-delay:${i*.05}s"><h5>${escape(item.title)}</h5><p>${escape(item.description)}</p><div class="cal-cc-tags">${item.tags.map(([t,c])=>`<span class="cal-cc-tag ${escape(c||'')}">${escape(t)}</span>`).join('')}</div></article>`).join('')}
- function activate(key){const view=data[key];if(!view)return;cards.forEach(card=>{const on=card.dataset.key===key;card.classList.toggle('active',on);card.setAttribute('aria-selected',String(on));card.tabIndex=on?0:-1});queue.classList.add('switching');setTimeout(()=>{eyebrow.textContent=view.eyebrow;title.textContent=view.title;hint.textContent=view.hint;panel.setAttribute('aria-labelledby',root.querySelector(`[data-key="${key}"]`).id);render(view.items);queue.classList.remove('switching')},130)}
- cards.forEach((card,index)=>{card.addEventListener('click',()=>activate(card.dataset.key));card.addEventListener('keydown',e=>{if(['ArrowRight','ArrowDown','ArrowLeft','ArrowUp'].includes(e.key)){e.preventDefault();const delta=(e.key==='ArrowRight'||e.key==='ArrowDown')?1:-1;cards[(index+delta+cards.length)%cards.length].focus()}if(e.key==='Enter'||e.key===' '){e.preventDefault();activate(card.dataset.key)}})});
- render(data.emergency.items);
- root.querySelectorAll('[data-count]').forEach(el=>{const end=Number(el.dataset.count),start=performance.now(),duration=650;function tick(now){const p=Math.min((now-start)/duration,1);el.textContent=Math.round(end*p);if(p<1)requestAnimationFrame(tick);else el.textContent=end}requestAnimationFrame(tick)});
+  const root=document.getElementById('calCommandCenter'); if(!root) return;
+  const cards=[...root.querySelectorAll('.cal-cc-card')], panel=root.querySelector('#cal-detail-items'), queue=root.querySelector('#calDetailQueue'), eyebrow=root.querySelector('#calQueueEyebrow'), title=root.querySelector('#calQueueTitle'), hint=root.querySelector('#calQueueHint');
+  const dateBtn=root.querySelector('#calDateBtn'), typeBtn=root.querySelector('#calTypeBtn'), dateValue=root.querySelector('#calDateValue'), typeValue=root.querySelector('#calTypeValue'), summary=root.querySelector('#calFilterSummary');
+  const filters=[...root.querySelectorAll('.cal-cc-filter')], options=[...root.querySelectorAll('.cal-cc-option')];
+  const state={date:'today', type:'all', category:'emergency'};
+  const escape=s=>String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+  function getView(){ return datasets[`${state.date}|${state.type}`] || datasets['today|all']; }
+  function getCategoryData(key){ return getView()[key]; }
+  function render(items){ panel.innerHTML=items.map((item,i)=>`<article class="cal-cc-item" style="animation-delay:${i*.05}s"><h5>${escape(item.title)}</h5><p>${escape(item.description)}</p><div class="cal-cc-tags">${item.tags.map(([t,c])=>`<span class="cal-cc-tag ${escape(c||'')}">${escape(t)}</span>`).join('')}</div></article>`).join(''); }
+  function updateFilterButtons(){
+    dateValue.textContent=labels.date[state.date];
+    typeValue.textContent=labels.type[state.type];
+    summary.textContent=`Showing ${labels.date[state.date].toLowerCase()} for ${labels.type[state.type].toLowerCase()}`;
+    options.forEach(opt=>{const on=opt.dataset.filterType==='date'?opt.dataset.value===state.date:opt.dataset.value===state.type; opt.classList.toggle('active',on); opt.setAttribute('aria-checked', on?'true':'false');});
+  }
+  function updateCards(){
+    const view=getView();
+    cards.forEach(card=>{const key=card.dataset.key; const cfg=view[key]; if(!cfg) return; const num=card.querySelector('[data-count]'); const desc=card.querySelector('.cal-cc-desc'); num.textContent=cfg.count; num.dataset.count=cfg.count; desc.textContent=cfg.desc;});
+  }
+  function closeMenus(){ filters.forEach(f=>{f.classList.remove('open'); const btn=f.querySelector('.cal-cc-filter-btn'); if(btn) btn.setAttribute('aria-expanded','false'); if(btn) btn.classList.remove('open');}); }
+  function openMenu(filterName){ closeMenus(); const wrap=root.querySelector(`.cal-cc-filter[data-filter="${filterName}"]`); if(!wrap) return; wrap.classList.add('open'); const btn=wrap.querySelector('.cal-cc-filter-btn'); btn.setAttribute('aria-expanded','true'); btn.classList.add('open'); }
+  function activate(key){ const view=getCategoryData(key); if(!view) return; state.category=key; cards.forEach(card=>{const on=card.dataset.key===key; card.classList.toggle('active',on); card.setAttribute('aria-selected',String(on)); card.tabIndex=on?0:-1;}); queue.classList.add('switching'); setTimeout(()=>{eyebrow.textContent=view.eyebrow; title.textContent=view.title; hint.textContent=view.hint; panel.setAttribute('aria-labelledby',root.querySelector(`[data-key="${key}"]`).id); render(view.items); queue.classList.remove('switching');},130); }
+  function applyFilters(){ updateFilterButtons(); updateCards(); activate(state.category); }
+  cards.forEach((card,index)=>{card.addEventListener('click',()=>activate(card.dataset.key)); card.addEventListener('keydown',e=>{if(['ArrowRight','ArrowDown','ArrowLeft','ArrowUp'].includes(e.key)){e.preventDefault(); const delta=(e.key==='ArrowRight'||e.key==='ArrowDown')?1:-1; cards[(index+delta+cards.length)%cards.length].focus();} if(e.key==='Enter'||e.key===' '){e.preventDefault(); activate(card.dataset.key);}});});
+  dateBtn.addEventListener('click',e=>{e.stopPropagation(); const open=dateBtn.getAttribute('aria-expanded')==='true'; open?closeMenus():openMenu('date');});
+  typeBtn.addEventListener('click',e=>{e.stopPropagation(); const open=typeBtn.getAttribute('aria-expanded')==='true'; open?closeMenus():openMenu('type');});
+  options.forEach(opt=>opt.addEventListener('click',()=>{ if(opt.dataset.filterType==='date') state.date=opt.dataset.value; else state.type=opt.dataset.value; closeMenus(); applyFilters(); }));
+  document.addEventListener('click',e=>{ if(!root.contains(e.target)) closeMenus(); });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeMenus(); });
+  // initial count animation based on default dataset
+  updateFilterButtons();
+  const initial=getView();
+  cards.forEach(card=>{ const key=card.dataset.key; const cfg=initial[key]; const el=card.querySelector('[data-count]'); const end=Number(cfg.count); const start=performance.now(); const duration=650; function tick(now){const p=Math.min((now-start)/duration,1); el.textContent=Math.round(end*p); if(p<1) requestAnimationFrame(tick); else el.textContent=end;} requestAnimationFrame(tick); card.querySelector('.cal-cc-desc').textContent=cfg.desc; });
+  activate('emergency');
 }
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
-})();
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+})();})();
 </script></body>
 </html>
 <script async="" data-cookie-opt-in="true" data-deployment-id="dpl_Gcr47txSZKybu8u2fKNfy1Hm38sC" data-explicit-opt-in="true" src="https://vercel.live/_next-live/feedback/feedback.js"></script><script async="" data-cookie-opt-in="true" data-deployment-id="dpl_FXcEbHJFGvr8gciaNBbkqhAugYEf" data-explicit-opt-in="true" src="https://vercel.live/_next-live/feedback/feedback.js"></script><script async="" data-cookie-opt-in="true" data-deployment-id="dpl_BVFQbDcWKTaZYPvBcFYcymQZ3HLB" data-explicit-opt-in="true" src="https://vercel.live/_next-live/feedback/feedback.js"></script>
