@@ -725,7 +725,7 @@ function init(){
   }
   function updateCards(){
     const view=getView();
-    cards.forEach(card=>{const key=card.dataset.key; const cfg=view[key]; if(!cfg) return; const num=card.querySelector('[data-count]'); const desc=card.querySelector('.cal-cc-desc'); num.textContent=cfg.count; num.dataset.count=cfg.count; desc.textContent=cfg.desc;});
+    cards.forEach(card=>{const key=card.dataset.key; const cfg=view[key]; if(!cfg) return; const num=card.querySelector('[data-count]'); const desc=card.querySelector('.cal-cc-desc'); const count=(cfg.items||[]).length; num.textContent=count; num.dataset.count=count; desc.textContent=cfg.desc;});
   }
   function closeMenus(){ filters.forEach(f=>{f.classList.remove('open'); const btn=f.querySelector('.cal-cc-filter-btn'); if(btn) btn.setAttribute('aria-expanded','false'); if(btn) btn.classList.remove('open');}); }
   function openMenu(filterName){ closeMenus(); const wrap=root.querySelector(`.cal-cc-filter[data-filter="${filterName}"]`); if(!wrap) return; wrap.classList.add('open'); const btn=wrap.querySelector('.cal-cc-filter-btn'); btn.setAttribute('aria-expanded','true'); btn.classList.add('open'); }
@@ -740,11 +740,11 @@ function init(){
   // initial count animation based on default dataset
   updateFilterButtons();
   const initial=getView();
-  cards.forEach(card=>{ const key=card.dataset.key; const cfg=initial[key]; const el=card.querySelector('[data-count]'); const end=Number(cfg.count); const start=performance.now(); const duration=650; function tick(now){const p=Math.min((now-start)/duration,1); el.textContent=Math.round(end*p); if(p<1) requestAnimationFrame(tick); else el.textContent=end;} requestAnimationFrame(tick); card.querySelector('.cal-cc-desc').textContent=cfg.desc; });
+  cards.forEach(card=>{ const key=card.dataset.key; const cfg=initial[key]; const el=card.querySelector('[data-count]'); const end=Number((cfg.items||[]).length); const start=performance.now(); const duration=650; function tick(now){const p=Math.min((now-start)/duration,1); el.textContent=Math.round(end*p); if(p<1) requestAnimationFrame(tick); else el.textContent=end;} requestAnimationFrame(tick); card.querySelector('.cal-cc-desc').textContent=cfg.desc; });
   activate('emergency');
 }
 if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
-})();})();
+})();
 </script></body>
 </html>
 <script async="" data-cookie-opt-in="true" data-deployment-id="dpl_Gcr47txSZKybu8u2fKNfy1Hm38sC" data-explicit-opt-in="true" src="https://vercel.live/_next-live/feedback/feedback.js"></script><script async="" data-cookie-opt-in="true" data-deployment-id="dpl_FXcEbHJFGvr8gciaNBbkqhAugYEf" data-explicit-opt-in="true" src="https://vercel.live/_next-live/feedback/feedback.js"></script><script async="" data-cookie-opt-in="true" data-deployment-id="dpl_BVFQbDcWKTaZYPvBcFYcymQZ3HLB" data-explicit-opt-in="true" src="https://vercel.live/_next-live/feedback/feedback.js"></script>
