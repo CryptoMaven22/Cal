@@ -122,7 +122,59 @@
 @keyframes calCardEnter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}@keyframes calItemIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}@keyframes calFadeDown{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(8px)}}@keyframes calBarGrow{from{transform:scaleX(.2);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
 @media(max-width:980px){.cal-cc-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.cal-cc-items,.cal-cc-footer{grid-template-columns:1fr}.cal-cc-qtop{align-items:flex-start;flex-direction:column}}@media(max-width:620px){.cal-cc{padding:16px}.cal-cc-header{flex-direction:column}.cal-cc-cards{grid-template-columns:1fr}.cal-cc-card{min-height:145px}}
 @media(prefers-reduced-motion:reduce){.cal-cc-card,.cal-cc-item,.cal-cc-card.active:after{animation:none!important;transition:none!important}}
-</style></head>
+</style>
+<style>
+/* Cal product thesis — presentation panel */
+.cal-thesis-panel{
+  position:relative;
+  overflow:hidden;
+  margin:42px 0 0;
+  padding:48px 44px 42px;
+  border-radius:32px;
+  background:linear-gradient(135deg,#082f24 0%,#0b5d43 58%,#149766 100%);
+  box-shadow:0 24px 60px rgba(7,72,50,.22);
+  color:#fff;
+  isolation:isolate;
+  font-family:Inter,Arial,Helvetica,sans-serif;
+}
+.cal-thesis-content{position:relative;z-index:2;max-width:1040px}
+.cal-thesis-kicker,.cal-thesis-validation p{
+  margin:0;
+  color:#b9f4da;
+  font-size:.78rem;
+  line-height:1;
+  font-weight:850;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+.cal-thesis-panel h2{
+  max-width:1030px;
+  margin:24px 0 30px;
+  color:#fff;
+  font-size:clamp(2.3rem,4.4vw,4.35rem);
+  line-height:.99;
+  letter-spacing:-.055em;
+  font-weight:850;
+}
+.cal-thesis-rule{height:1px;background:rgba(255,255,255,.26);max-width:880px;margin:0 0 24px}
+.cal-thesis-validation{max-width:940px}
+.cal-thesis-validation strong{
+  display:block;
+  margin-top:12px;
+  color:#fff;
+  font-size:clamp(1rem,1.55vw,1.32rem);
+  line-height:1.4;
+  font-weight:750;
+}
+.cal-thesis-orb{position:absolute;border-radius:50%;z-index:1;pointer-events:none}
+.cal-thesis-orb-one{width:370px;height:370px;right:-90px;top:-210px;background:rgba(255,255,255,.08)}
+.cal-thesis-orb-two{width:250px;height:250px;right:115px;bottom:-205px;background:rgba(148,255,205,.09)}
+@media(max-width:760px){
+  .cal-thesis-panel{padding:34px 26px 30px;border-radius:24px}
+  .cal-thesis-panel h2{font-size:clamp(2rem,9vw,3.1rem);margin-top:20px}
+}
+</style>
+</head>
 <body>
 <header class="site-header" id="top">
 <nav aria-label="Primary navigation" class="nav-wrap">
@@ -208,23 +260,19 @@
 </div>
 </div>
 </figure>
-<div class="question-grid">
-<article class="question-card reveal">
-<span>01</span>
-<h3>Who is this for?</h3>
-<p>Doug, his office manager, dispatchers, and similar plumbing teams that need to triage inbound work without missing urgent issues.</p>
-</article>
-<article class="question-card reveal delay-1">
-<span>02</span>
-<h3>Product Thesis</h3>
-<p>Service requests arrive messy and inconsistent, forcing dispatchers to interpret urgency, risk, and next steps manually. Cal can turn that unstructured input into clear, prioritized, dispatch-ready work while directing owner attention to the requests that matter most.</p>
-</article>
-<article class="question-card reveal delay-2">
-<span>03</span>
-<h3>Validation</h3>
-<p>Do Cal’s core artifacts—the enriched service record, Operational Viewer, and Morning Brief—help Doug’s team triage requests faster and more consistently while identifying urgent or high-risk jobs sooner?</p>
-</article>
+<section aria-labelledby="cal-thesis-title" class="cal-thesis-panel reveal">
+<div aria-hidden="true" class="cal-thesis-orb cal-thesis-orb-one"></div>
+<div aria-hidden="true" class="cal-thesis-orb cal-thesis-orb-two"></div>
+<div class="cal-thesis-content">
+<p class="cal-thesis-kicker">Product thesis</p>
+<h2 id="cal-thesis-title">Service requests arrive messy and inconsistent, forcing dispatchers to interpret urgency, risk, and next steps manually. Cal can turn that unstructured input into clear, prioritized, dispatch-ready work while directing owner attention to the requests that matter most.</h2>
+<div class="cal-thesis-rule"></div>
+<div class="cal-thesis-validation">
+<p>Validation question</p>
+<strong>Do Cal’s core artifacts—the enriched service record, Operational Viewer, and Morning Brief—help Doug’s team triage requests faster and more consistently while identifying urgent or high-risk jobs sooner?</strong>
 </div>
+</div>
+</section>
 </section>
 <section class="viewer-section section-pad cal-ov-section" id="viewer">
 <div class="section-heading reveal">
