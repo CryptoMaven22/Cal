@@ -70,44 +70,7 @@
       }
     }
   </style>
-<style>
-    /* AtlasFlow OV Template — Cal */
-    .cal-ov-section .section-heading { max-width: 980px; }
-    .cal-ov-shell { background: linear-gradient(180deg, #ffffff 0%, #f7fbf7 100%); border: 1px solid rgba(11, 96, 68, 0.16); border-radius: 32px; box-shadow: 0 24px 70px rgba(14, 66, 45, 0.12); padding: 24px; }
-    .cal-ov-header { display: flex; justify-content: space-between; gap: 24px; align-items: flex-start; border-bottom: 1px solid rgba(11, 96, 68, 0.14); padding-bottom: 20px; margin-bottom: 18px; }
-    .cal-ov-header h3 { font-size: clamp(28px, 4vw, 44px); line-height: 0.98; letter-spacing: -0.055em; margin: 6px 0 10px; }
-    .cal-ov-header p { max-width: 760px; color: var(--muted); margin: 0; }
-    .cal-ov-kicker, .cal-ov-detail-grid span, .cal-ov-panel-title span, .cal-ov-replay span, .cal-ov-proof span, .cal-ov-mode-grid span { display: inline-flex; color: var(--green); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 800; font-size: 0.76rem; margin: 0; }
-    .cal-ov-mode { white-space: nowrap; color: var(--green); background: rgba(25, 158, 111, 0.12); border: 1px solid rgba(25, 158, 111, 0.22); border-radius: 999px; padding: 9px 12px; font-size: 0.78rem; font-weight: 800; }
-    .cal-ov-spine, .cal-ov-summary { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
-    .cal-ov-summary { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .cal-ov-spine article, .cal-ov-summary article, .cal-ov-mode-grid article { background: #fff; border: 1px solid rgba(11, 96, 68, 0.15); border-radius: 18px; padding: 16px; box-shadow: 0 12px 28px rgba(14, 66, 45, 0.06); }
-    .cal-ov-spine span { display: block; color: var(--green); font-weight: 800; font-size: 0.8rem; margin-bottom: 9px; }
-    .cal-ov-spine strong { display: block; font-size: 0.92rem; line-height: 1.18; margin-bottom: 6px; }
-    .cal-ov-spine p, .cal-ov-summary p, .cal-ov-mode-grid p, .cal-ov-proof p, .cal-ov-replay p { color: var(--muted); margin: 0; line-height: 1.45; }
-    .cal-ov-summary span { display: block; color: var(--muted); text-transform: uppercase; letter-spacing: 0.09em; font-size: 0.76rem; font-weight: 800; }
-    .cal-ov-summary strong { display: block; color: var(--ink); font-size: 2.25rem; line-height: 1; margin: 8px 0; }
-    .cal-ov-viewer { margin-top: 10px; margin-bottom: 18px; }
-    .cal-ov-layout { grid-template-columns: 190px minmax(0, 1fr) minmax(300px, 0.95fr) !important; align-items: stretch; }
-    .cal-ov-detail { background: #fff; border: 1px solid rgba(11, 96, 68, 0.15); border-radius: 24px; padding: 18px; color: var(--ink); }
-    .cal-ov-panel-title { display: flex; justify-content: space-between; gap: 12px; align-items: center; margin-bottom: 14px; }
-    .cal-ov-panel-title strong { font-size: 0.76rem; color: var(--muted); }
-    .cal-ov-detail h3 { font-size: 1.65rem; letter-spacing: -0.035em; margin: 0 0 14px; }
-    .cal-ov-detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-    .cal-ov-detail-grid div { background: rgba(25, 158, 111, 0.055); border: 1px solid rgba(11, 96, 68, 0.12); border-radius: 16px; padding: 13px; }
-    .cal-ov-detail-grid p { color: var(--muted); margin: 7px 0 0; line-height: 1.42; font-size: 0.92rem; }
-    .cal-ov-replay { display: flex; justify-content: space-between; gap: 20px; align-items: center; background: #0f1f17; color: #fff; border-radius: 22px; padding: 18px; margin-bottom: 16px; }
-    .cal-ov-replay p { color: rgba(255,255,255,0.72); margin-top: 4px; }
-    .cal-ov-flow { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; justify-content: flex-end; }
-    .cal-ov-flow strong { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; padding: 8px 10px; font-size: 0.85rem; }
-    .cal-ov-flow span { color: rgba(255,255,255,0.7); margin: 0; letter-spacing: 0; }
-    .cal-ov-proof { background: #fff; border: 1px solid rgba(11, 96, 68, 0.14); border-radius: 18px; padding: 17px; margin-bottom: 16px; }
-    .cal-ov-proof p { margin-top: 7px; max-width: 920px; }
-    .cal-ov-mode-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-    @media (max-width: 1120px) { .cal-ov-layout { grid-template-columns: 1fr !important; } .cal-ov-spine { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 800px) { .cal-ov-header, .cal-ov-replay { flex-direction: column; align-items: flex-start; } .cal-ov-summary, .cal-ov-mode-grid, .cal-ov-detail-grid { grid-template-columns: 1fr; } .cal-ov-flow { justify-content: flex-start; } }
-    @media (max-width: 560px) { .cal-ov-shell { padding: 16px; } .cal-ov-spine { grid-template-columns: 1fr; } }
-  </style>
+
 <style>
 /* Interactive Cal Command Center */
 .cal-cc-figure{width:100%;max-width:none!important;margin:34px 0 0!important}
@@ -182,7 +145,6 @@
 </a>
 <button aria-controls="nav-links" aria-expanded="false" class="nav-toggle" type="button">Menu</button>
 <div class="nav-links" id="nav-links">
-
 <a href="#proof">Proof</a>
 <a href="#build">Build</a>
 <a href="#discovery">Discovery</a><a href="#case-study">Case Study</a>
@@ -269,7 +231,6 @@
 </div>
 </section>
 </section>
-
 <section class="section-pad" id="proof">
 <div class="proof-grid">
 <div class="section-heading left reveal">
