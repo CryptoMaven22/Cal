@@ -70,10 +70,19 @@
       }
     }
   </style>
+<style>
+/* Shared page width tightening */
+main{padding:0 16px 56px}
+.section-pad{max-width:1380px;margin-left:auto;margin-right:auto}
+.section-pad.slim{max-width:1380px}
+.section-heading{max-width:980px;margin-left:auto;margin-right:auto;text-align:center}
+#proof .section-heading.left, #build .section-heading, #discovery .section-heading, #case-study .section-heading{margin-left:0;margin-right:0;text-align:left}
+#proof .proof-grid, .build-section, .discovery-section, #case-study{max-width:1380px;margin-left:auto;margin-right:auto}
+</style>
 
 <style>
 /* Interactive Cal Command Center */
-.cal-cc-figure{width:100%;max-width:none!important;margin:34px 0 0!important}
+.cal-cc-figure{width:100%;max-width:1380px!important;margin:34px auto 0!important}
 .cal-cc-figure>figcaption{display:flex;flex-direction:column;gap:4px;margin-top:14px;color:var(--muted,#66736b)}
 .cal-cc{--cc-green:#19a56b;--cc-green-dark:#0b7a4f;--cc-green-soft:#eaf8f0;--cc-line:#d6e6db;--cc-muted:#66736b;--cc-ink:#10131a;--cc-red:#a43e36;--cc-yellow:#8a6400;border:2px solid var(--cc-red);border-radius:28px;padding:24px;background:#fff;box-shadow:0 18px 46px rgba(20,80,55,.10);color:var(--cc-ink);font-family:Inter,Arial,Helvetica,sans-serif}
 .cal-cc *{box-sizing:border-box}.cal-cc button{font:inherit}
@@ -90,7 +99,8 @@
 .cal-thesis-panel{
   position:relative;
   overflow:hidden;
-  margin:42px 0 0;
+  margin:42px auto 0;
+  max-width:1380px;
   padding:48px 44px 42px;
   border-radius:32px;
   background:linear-gradient(135deg,#082f24 0%,#0b5d43 58%,#149766 100%);
