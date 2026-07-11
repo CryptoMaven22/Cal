@@ -62,6 +62,18 @@ main{padding:0 16px 56px}
 @keyframes calCardEnter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}@keyframes calItemIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}@keyframes calFadeDown{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(8px)}}@keyframes calBarGrow{from{transform:scaleX(.2);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
 @media(max-width:980px){.cal-cc-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.cal-cc-items{grid-template-columns:1fr}.cal-cc-record-grid{grid-template-columns:1fr 1fr}.cal-cc-qtop{align-items:flex-start;flex-direction:column}}@media(max-width:620px){.cal-cc{padding:16px}.cal-cc-header{flex-direction:column}.cal-cc-cards{grid-template-columns:1fr}.cal-cc-card{min-height:145px}.cal-cc-record-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.cal-cc-card,.cal-cc-item,.cal-cc-card.active:after{animation:none!important;transition:none!important}}
+.cal-cc-header-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.cal-morning-btn{appearance:none;border:0;border-radius:999px;padding:10px 15px;background:linear-gradient(135deg,var(--cc-green),var(--cc-green-dark));color:#fff;font-size:13px;font-weight:850;cursor:pointer;box-shadow:0 10px 22px rgba(11,122,79,.20);transition:transform .18s ease,box-shadow .18s ease}
+.cal-morning-btn:hover{transform:translateY(-1px);box-shadow:0 13px 26px rgba(11,122,79,.25)}
+.cal-morning-btn:focus-visible{outline:3px solid rgba(25,165,107,.30);outline-offset:3px}
+.cal-brief-modal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(10,24,17,.60);backdrop-filter:blur(7px)}
+.cal-brief-modal.open{display:flex}
+.cal-brief-dialog{width:min(1040px,100%);max-height:92vh;overflow:auto;border-radius:28px;background:#f7fbf8;border:1px solid #cfe3d5;box-shadow:0 30px 90px rgba(0,0,0,.28);color:#17231c}
+.cal-brief-top{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;gap:20px;align-items:flex-start;padding:24px 26px 20px;background:linear-gradient(135deg,#083d2c,#0b7a4f);color:#fff;border-radius:27px 27px 0 0}
+.cal-brief-top h3{margin:4px 0 6px;font-size:34px;letter-spacing:-.04em}.cal-brief-top p{margin:0;color:#d9f3e6;font-size:14px}.cal-brief-close{appearance:none;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.10);color:#fff;width:38px;height:38px;border-radius:50%;font-size:22px;cursor:pointer}
+.cal-brief-body{padding:22px 26px 28px}.cal-brief-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:18px}.cal-brief-stat{background:#fff;border:1px solid #dbe9df;border-radius:16px;padding:15px}.cal-brief-stat span{display:block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#68766e;font-weight:850;margin-bottom:6px}.cal-brief-stat strong{font-size:27px;line-height:1;color:#142119}.cal-brief-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:16px}.cal-brief-panel{background:#fff;border:1px solid #dbe9df;border-radius:18px;padding:18px}.cal-brief-panel h4{font-size:19px;margin:0 0 12px;letter-spacing:-.02em}.cal-brief-item{padding:13px 0;border-top:1px solid #edf2ef}.cal-brief-item:first-of-type{border-top:0;padding-top:0}.cal-brief-item strong{display:block;font-size:14px;margin-bottom:4px}.cal-brief-item p{margin:0;color:#637168;font-size:13px;line-height:1.45}.cal-brief-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.cal-brief-tag{font-size:10px;font-weight:850;border-radius:999px;padding:5px 8px;background:#e9f8ef;color:#0b7a4f;border:1px solid #c9ead7}.cal-brief-tag.red{background:#fff1f0;color:#a43e36;border-color:#f1c7c3}.cal-brief-tag.yellow{background:#fff8e6;color:#8a6400;border-color:#f1dc9c}.cal-brief-focus{border-left:4px solid var(--cc-green);padding:12px 13px;background:#eef9f3;border-radius:12px;font-size:14px;line-height:1.45;font-weight:750;color:#194831}.cal-brief-footer{margin-top:16px;font-size:11px;color:#748178;text-align:right}
+@media(max-width:820px){.cal-brief-summary{grid-template-columns:1fr 1fr}.cal-brief-grid{grid-template-columns:1fr}.cal-cc-header-actions{justify-content:flex-start}}
+@media(max-width:520px){.cal-brief-summary{grid-template-columns:1fr}.cal-brief-top,.cal-brief-body{padding-left:18px;padding-right:18px}.cal-brief-top h3{font-size:28px}}
 </style>
 <style>
 /* Cal product thesis — presentation panel */
@@ -197,7 +209,7 @@ main{padding:0 16px 56px}
 <p class="cal-cc-lead">Everything the office team needs to review, dispatch, and act on today.</p>
 <p class="cal-cc-small">Emergency work, follow-ups, owner attention, and recommended next actions in one operating view.</p>
 </div>
-<span class="cal-cc-live"><i></i> Today</span>
+<div class="cal-cc-header-actions"><button class="cal-morning-btn" id="calMorningBriefBtn" type="button">Open Morning Brief</button><span class="cal-cc-live"><i></i> Today</span></div>
 </div>
 <div aria-label="Current filters" class="cal-cc-filters">
 <div class="cal-cc-filter" data-filter="date">
@@ -264,6 +276,39 @@ main{padding:0 16px 56px}
 </div>
 </section>
 </section>
+
+<div class="cal-brief-modal" id="calMorningBriefModal" aria-hidden="true">
+  <section class="cal-brief-dialog" role="dialog" aria-modal="true" aria-labelledby="calBriefTitle">
+    <div class="cal-brief-top">
+      <div><span class="cal-cc-eyebrow" style="color:#b9f4da">Owner Morning Brief</span><h3 id="calBriefTitle">Monday, July 13 · What needs attention first</h3><p>Static prototype view for Doug and the L.E. Isley &amp; Sons Plumbing office team.</p></div>
+      <button class="cal-brief-close" id="calMorningBriefClose" type="button" aria-label="Close Morning Brief">×</button>
+    </div>
+    <div class="cal-brief-body">
+      <div class="cal-brief-summary">
+        <article class="cal-brief-stat"><span>Open requests</span><strong>12</strong></article>
+        <article class="cal-brief-stat"><span>Emergency / urgent</span><strong>2</strong></article>
+        <article class="cal-brief-stat"><span>Needs review</span><strong>2</strong></article>
+        <article class="cal-brief-stat"><span>Follow-ups due</span><strong>3</strong></article>
+      </div>
+      <div class="cal-brief-grid">
+        <section class="cal-brief-panel">
+          <h4>Priority work this morning</h4>
+          <div class="cal-brief-item"><strong>Mrs. Thompson · Ceiling leak</strong><p>Water is still entering the ceiling below the upstairs bathroom. Customer is available now and asked for a call before dispatch.</p><div class="cal-brief-tags"><span class="cal-brief-tag red">Emergency</span><span class="cal-brief-tag red">Dispatch now</span><span class="cal-brief-tag">Technician: Mike R.</span></div></div>
+          <div class="cal-brief-item"><strong>Robert Jenkins · Water heater leak</strong><p>Basement water heater is actively leaking. Same-day service is requested; arrival must be confirmed before noon.</p><div class="cal-brief-tags"><span class="cal-brief-tag yellow">Same day</span><span class="cal-brief-tag">Confirm arrival</span><span class="cal-brief-tag">Protect flooring</span></div></div>
+          <div class="cal-brief-item"><strong>Karen Mills · Callback overdue</strong><p>The office promised a 9:00 AM estimate-status callback. No follow-up has been logged.</p><div class="cal-brief-tags"><span class="cal-brief-tag red">Overdue</span><span class="cal-brief-tag">Customer callback</span></div></div>
+        </section>
+        <aside class="cal-brief-panel">
+          <h4>Owner focus</h4>
+          <div class="cal-brief-focus">Confirm emergency coverage first, resolve Karen Mills’s overdue callback, then review the Mark Reynolds estimate scope before assigning an estimator.</div>
+          <div class="cal-brief-item"><strong>Capacity signal</strong><p>Morning schedule is nearly full. One same-day slot remains after 2:30 PM.</p></div>
+          <div class="cal-brief-item"><strong>Requests needing judgment</strong><p>Mark Reynolds estimate scope and technician parts note both require office review.</p></div>
+          <div class="cal-brief-item"><strong>Recommended communication</strong><p>Send Oak Street HOA replacement options and text the Green Family if the technician slips by more than 30 minutes.</p></div>
+        </aside>
+      </div>
+      <div class="cal-brief-footer">Generated by Cal · Static validation prototype · Human review required</div>
+    </div>
+  </section>
+</div>
 </main>
 <footer class="site-footer">
 <div>
@@ -547,6 +592,17 @@ function init(){
 }
 if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
 })();
-</script></body>
+</script>
+<script>
+(function(){
+  var openBtn=document.getElementById('calMorningBriefBtn');
+  var modal=document.getElementById('calMorningBriefModal');
+  var closeBtn=document.getElementById('calMorningBriefClose');
+  function openBrief(){modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';closeBtn.focus();}
+  function closeBrief(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';if(openBtn)openBtn.focus();}
+  if(openBtn&&modal&&closeBtn){openBtn.addEventListener('click',openBrief);closeBtn.addEventListener('click',closeBrief);modal.addEventListener('click',function(e){if(e.target===modal)closeBrief();});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('open'))closeBrief();});}
+})();
+</script>
+</body>
 </html>
 <script async="" data-cookie-opt-in="true" data-deployment-id="dpl_Gcr47txSZKybu8u2fKNfy1Hm38sC" data-explicit-opt-in="true" src="https://vercel.live/_next-live/feedback/feedback.js"></script><script async="" data-cookie-opt-in="true" data-deployment-id="dpl_FXcEbHJFGvr8gciaNBbkqhAugYEf" data-explicit-opt-in="true" src="https://vercel.live/_next-live/feedback/feedback.js"></script><script async="" data-cookie-opt-in="true" data-deployment-id="dpl_BVFQbDcWKTaZYPvBcFYcymQZ3HLB" data-explicit-opt-in="true" src="https://vercel.live/_next-live/feedback/feedback.js"></script><script async data-explicit-opt-in="true" data-cookie-opt-in="true" data-deployment-id="dpl_GFG2c3gnu9wmFyRCvzziCcJhwp1b" src="https://vercel.live/_next-live/feedback/feedback.js"></script>
