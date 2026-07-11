@@ -323,7 +323,18 @@ main > section.section-pad.slim:first-child .section-heading {
     padding-top: 20px !important;
   }
 }
-</style></head>
+</style><style id="cal-primary-heading-size">
+/* Primary heading: 20% larger than the previous 2rem browser default */
+main > .section-pad:first-of-type .section-heading h1{
+  font-size:2.4rem;
+  line-height:1.06;
+  letter-spacing:-.035em;
+}
+@media(max-width:640px){
+  main > .section-pad:first-of-type .section-heading h1{font-size:2.4rem;}
+}
+</style>
+</head>
 <body>
 <header class="site-header" id="top">
 <nav aria-label="Primary navigation" class="nav-wrap">
