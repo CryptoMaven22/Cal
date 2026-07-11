@@ -182,7 +182,7 @@
 </a>
 <button aria-controls="nav-links" aria-expanded="false" class="nav-toggle" type="button">Menu</button>
 <div class="nav-links" id="nav-links">
-<a href="#viewer">Operational Viewer</a>
+
 <a href="#proof">Proof</a>
 <a href="#build">Build</a>
 <a href="#discovery">Discovery</a><a href="#case-study">Case Study</a>
@@ -194,7 +194,7 @@
 <div class="section-heading reveal">
 <p class="eyebrow">What Cal proves</p>
 <h2>Clarity before dispatch.</h2>
-<p>Built around the L.E. Isley & Sons Plumbing workflow, Cal demonstrates a reusable AtlasFlow pattern for field service: a messy request becomes AI triage, a structured job record, Operational Viewer visibility, human review, and a clear recommended next action.</p>
+<p>Built around the L.E. Isley &amp; Sons Plumbing workflow, Cal demonstrates a reusable AtlasFlow pattern for field service: a messy request becomes AI triage, a structured job record, Operational Viewer visibility, human review, and a clear recommended next action.</p>
 </div><figure aria-label="Interactive Cal Command Center" class="command-center-preview cal-cc-figure reveal">
 <div class="cal-cc" id="calCommandCenter">
 <div class="cal-cc-header">
@@ -226,8 +226,8 @@
 </button>
 <div aria-label="Service request type options" class="cal-cc-menu" id="calTypeMenu" role="menu">
 <button class="cal-cc-option active" data-filter-type="type" data-value="all" role="menuitemradio" type="button"><span>All service requests</span><small>Full queue</small></button>
-<button class="cal-cc-option" data-filter-type="type" data-value="emergency" role="menuitemradio" type="button"><span>Emergency & urgent</span><small>Risk-heavy work</small></button>
-<button class="cal-cc-option" data-filter-type="type" data-value="followups" role="menuitemradio" type="button"><span>Follow-ups & callbacks</span><small>Communication-heavy work</small></button>
+<button class="cal-cc-option" data-filter-type="type" data-value="emergency" role="menuitemradio" type="button"><span>Emergency &amp; urgent</span><small>Risk-heavy work</small></button>
+<button class="cal-cc-option" data-filter-type="type" data-value="followups" role="menuitemradio" type="button"><span>Follow-ups &amp; callbacks</span><small>Communication-heavy work</small></button>
 </div>
 </div>
 <div class="cal-cc-status-note" id="calFilterSummary">Showing today across all service requests</div>
@@ -264,141 +264,12 @@
 <div class="cal-thesis-rule"></div>
 <div class="cal-thesis-validation">
 <p>Validation question</p>
-<strong>Do Cal’s core artifacts help L.E. Isley & Sons Plumbing turn messy service requests into faster, more consistent decisions by surfacing urgent or high-risk work sooner and clarifying the right next action—without removing human control?</strong>
+<strong>Do Cal’s core artifacts help L.E. Isley &amp; Sons Plumbing turn messy service requests into faster, more consistent decisions by surfacing urgent or high-risk work sooner and clarifying the right next action—without removing human control?</strong>
 </div>
 </div>
 </section>
 </section>
-<section class="viewer-section section-pad cal-ov-section" id="viewer">
-<div class="section-heading reveal">
-<p class="eyebrow">AtlasFlow OV Template</p>
-<h2>Cal Operational Viewer</h2>
-<p><strong>Service request triage + dispatch clarity.</strong> An AtlasFlow Operational Viewer is a reusable decision surface that shows how messy operational input becomes structured context, risk or priority signals, and clear next actions.</p>
-</div>
-<div class="cal-ov-shell reveal">
-<div class="cal-ov-header">
-<div>
-<p class="cal-ov-kicker">Cal — Operational Viewer</p>
-<h3>Service request triage + dispatch clarity</h3>
-<p>Customer-facing proof layer for Cal’s artifacts and operating logic: what came in, what changed, what Cal understood, what needs attention, and what should happen next.</p>
-</div>
-<span class="cal-ov-mode">Static OV · MVP proof</span>
-</div>
-<div aria-label="Operational Viewer questions" class="cal-ov-spine">
-<article><span>01</span><strong>What came in?</strong><p>Raw service request</p></article>
-<article><span>02</span><strong>What did Cal understand?</strong><p>Category, urgency, risk, and confidence</p></article>
-<article><span>03</span><strong>What changed?</strong><p>Structured triage fields written back</p></article>
-<article><span>04</span><strong>What needs attention?</strong><p>Emergency, high-risk, or unclear work</p></article>
-<article><span>05</span><strong>What should happen next?</strong><p>Dispatch, review, schedule, or brief</p></article>
-</div>
-<div aria-label="Cal operating state" class="cal-ov-summary">
-<article><span>All requests</span><strong>8</strong><p>Open service records in the operating view.</p></article>
-<article><span>Emergency / high</span><strong>3</strong><p>Active water, backup, or same-day risk.</p></article>
-<article><span>Needs review</span><strong>3</strong><p>Items where owner or dispatcher judgment matters.</p></article>
-<article><span>Ready for dispatch</span><strong>5</strong><p>Structured enough to assign or schedule.</p></article>
-</div>
-<div class="viewer-shell cal-ov-viewer">
-<div class="viewer-header">
-<div>
-<strong>Cal Dispatch Console</strong>
-<small>Review Queue · AI service request triage + owner attention</small>
-</div>
-<button class="replay-btn" id="replayBtn" type="button">Replay triage</button>
-</div>
-<div class="viewer-layout cal-ov-layout">
-<aside aria-label="Dispatch queues" class="queue-nav">
-<button class="queue active" data-filter="all"><span>All requests</span><b>8</b></button>
-<button class="queue" data-filter="urgent"><span>Emergency / High</span><b>3</b></button>
-<button class="queue" data-filter="review"><span>Needs Review</span><b>3</b></button>
-<button class="queue" data-filter="ready"><span>Triaged · Owner Attention</span><b>5</b></button>
-</aside>
-<section aria-live="polite" class="dispatch-panel">
-<div class="panel-toolbar">
-<span class="status-chip">Work Queue</span>
-<span class="status-chip muted">Sorted by risk</span>
-</div>
-<div class="job-stream" id="jobStream">
-<article class="job-row urgent" data-type="urgent review">
-<div>
-<span class="pill red">Red</span>
-<h3>Mrs. Thompson — Emergency Leak</h3>
-<p>Water is leaking from the ceiling below an upstairs bathroom and continues after an attempted toilet shutoff.</p>
-</div>
-<dl>
-<div><dt>Job Type</dt><dd>Drain</dd></div>
-<div><dt>Priority</dt><dd>high</dd></div>
-<div><dt>Next Action</dt><dd>Dispatch a plumber immediately.</dd></div>
-</dl>
-</article>
-<article class="job-row emergency" data-type="urgent review">
-<div>
-<span class="pill red">Red</span>
-<h3>Mrs. Thompson</h3>
-<p>Water leaking from ceiling below upstairs bathroom after attempted shutoff.</p>
-</div>
-<dl>
-<div><dt>Job Type</dt><dd>Leak / Water Damage</dd></div>
-<div><dt>Priority</dt><dd>Emergency</dd></div>
-<div><dt>Next Action</dt><dd>Same-day emergency dispatch.</dd></div>
-</dl>
-</article>
-<article class="job-row watch" data-type="urgent review ready">
-<div>
-<span class="pill yellow">Yellow</span>
-<h3>Robert Jenkins</h3>
-<p>Water heater leaking. Customer available after lunch.</p>
-</div>
-<dl>
-<div><dt>Job Type</dt><dd>Water Heater</dd></div>
-<div><dt>Priority</dt><dd>high</dd></div>
-<div><dt>Next Action</dt><dd>Schedule same-day diagnosis.</dd></div>
-</dl>
-</article>
-<article class="job-row routine" data-type="ready">
-<div>
-<span class="pill green">Green</span>
-<h3>Amy Carter</h3>
-<p>Kitchen sink draining slowly. No active leak reported.</p>
-</div>
-<dl>
-<div><dt>Job Type</dt><dd>Drain</dd></div>
-<div><dt>Priority</dt><dd>Medium</dd></div>
-<div><dt>Next Action</dt><dd>Schedule next available visit.</dd></div>
-</dl>
-</article>
-</div>
-</section>
-<aside aria-label="Selected detail panel" class="cal-ov-detail">
-<div class="cal-ov-panel-title"><span>Selected Detail Panel</span><strong>Trust layer</strong></div>
-<h3>Mrs. Thompson — Emergency Leak</h3>
-<div class="cal-ov-detail-grid">
-<div><span>Original input</span><p>Water is leaking from the ceiling below an upstairs bathroom and continues after an attempted toilet shutoff.</p></div>
-<div><span>AI interpretation</span><p>Cal identifies the category as Leak / Water Damage, marks the urgency as Emergency, and flags active water damage.</p></div>
-<div><span>Risk Reason</span><p>The leak continues after an attempted shutoff, indicating active property risk and the need for immediate human review.</p></div>
-<div><span>Recommended Next Action</span><p>Dispatch a same-day emergency plumber immediately and call the customer before arrival.</p></div>
-<div><span>Status</span><p>Triaged · Owner Attention</p></div>
-<div><span>Human decision point</span><p>The dispatcher or owner reviews Cal’s recommendation and remains responsible for technician assignment, timing, and customer communication.</p></div>
-</div>
-</aside>
-</div>
-</div>
-<div aria-label="Workflow replay" class="cal-ov-replay">
-<div><span>Workflow Replay</span><p>Cal: Form → Table → AI → Automation → Views</p></div>
-<div class="cal-ov-flow">
-<strong>Form</strong><span>→</span><strong>Table</strong><span>→</span><strong>AI</strong><span>→</span><strong>Automation</strong><span>→</span><strong>Views</strong>
-</div>
-</div>
-<div class="cal-ov-proof">
-<span>Proof Artifact</span>
-<p>The Cal Operational Viewer is backed by the working Cal Airtable artifact: raw service records enriched with AI-generated job type, priority, RYG confidence, summary, and recommended next action.</p>
-</div>
-<div class="cal-ov-mode-grid">
-<article><span>Static OV</span><p>Polished proof layer for portfolio, stakeholder review, early demo, and product positioning.</p></article>
-<article><span>Dynamic OV path</span><p>Next version can connect one live section to Airtable or another operating data source.</p></article>
-<article><span>OV principle</span><p>Decision cockpit, not dashboard dump: attention, risk, reason, and next action.</p></article>
-</div>
-</div>
-</section>
+
 <section class="section-pad" id="proof">
 <div class="proof-grid">
 <div class="section-heading left reveal">
