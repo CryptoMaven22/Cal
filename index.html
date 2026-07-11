@@ -45,7 +45,7 @@ main{padding:0 16px 56px}
 .section-pad.slim{max-width:1380px}
 .section-heading{max-width:980px;margin-left:auto;margin-right:auto;text-align:center}
 #build .section-heading, #discovery .section-heading, #case-study .section-heading{margin-left:0;margin-right:0;text-align:left}
-.build-section, .discovery-section, #case-study{max-width:1380px;margin-left:auto;margin-right:auto}
+.discovery-section, #case-study{max-width:1380px;margin-left:auto;margin-right:auto}
 </style>
 
 <style>
@@ -144,7 +144,6 @@ main{padding:0 16px 56px}
 </a>
 <button aria-controls="nav-links" aria-expanded="false" class="nav-toggle" type="button">Menu</button>
 <div class="nav-links" id="nav-links">
-<a href="#build">Build</a>
 <a href="#case-study">Case Study</a>
 </div>
 </nav>
@@ -228,44 +227,6 @@ main{padding:0 16px 56px}
 </div>
 </div>
 </section>
-</section>
-<section class="section-pad build-section" id="build">
-<div class="section-heading reveal">
-<p class="eyebrow">Build architecture</p>
-<h2>Lean stack. Clear operating signal.</h2>
-<p>The Cal MVP keeps the stack intentionally lean and aligned to the working artifacts: Airtable stores service requests and Morning Brief records, Airtable Automations run the workflow, OpenAI performs triage and brief generation, and Airtable views plus the Cal Operational Viewer present the results for human review.</p>
-</div>
-<div class="stack-flow reveal">
-<article>
-<span>01</span>
-<h3>Form</h3>
-<p>Captures customer, phone, address, and a raw service request from a call, text, email, form, or handwritten note.</p>
-</article>
-<div class="flow-arrow">→</div>
-<article>
-<span>02</span>
-<h3>Table</h3>
-<p>Stores the raw request, structured triage outputs, workflow status, and Morning Brief-ready fields.</p>
-</article>
-<div class="flow-arrow">→</div>
-<article>
-<span>03</span>
-<h3>AI</h3>
-<p>Generates category, urgency, issue summary, customer risk, recommended action, dispatch notes, RYG confidence, and owner-attention status.</p>
-</article>
-<div class="flow-arrow">→</div>
-<article>
-<span>04</span>
-<h3>Automation</h3>
-<p>Maps and writes the structured AI output back into the original service request record.</p>
-</article>
-<div class="flow-arrow">→</div>
-<article>
-<span>05</span>
-<h3>Views</h3>
-<p>Organizes work into Emergency / High Priority, Needs Review, Ready for Dispatch, Owner Attention, and Morning Brief views.</p>
-</article>
-</div>
 </section>
 <section class="section-pad" id="case-study">
 <div class="case-grid">
