@@ -305,6 +305,19 @@ main{padding:0 16px 56px}
   .cal-footer-inner{grid-template-columns:1fr;gap:8px;text-align:center;padding:24px 18px}
   .cal-footer-item,.cal-footer-item:nth-child(2),.cal-footer-item:last-child{justify-content:center;border:0;min-height:32px}
 }
+</style><style id="cal-header-gap-override">
+/* Tighten spacing between the priority ticker and product framing */
+main > section.section-pad.slim:first-child {
+  padding-top: 28px !important;
+}
+main > section.section-pad.slim:first-child .section-heading {
+  margin-top: 0 !important;
+}
+@media (max-width: 640px) {
+  main > section.section-pad.slim:first-child {
+    padding-top: 20px !important;
+  }
+}
 </style></head>
 <body>
 <header class="site-header" id="top">
