@@ -199,69 +199,6 @@ main{padding:0 16px 56px}
 </style><style>
 .cal-proof-headline{display:block;margin:0 0 10px;color:#184b37;font-size:15px;line-height:1.35;font-weight:850}
 .cal-proof-section{margin-top:72px;margin-bottom:24px}
-</style><style id="cal-proof-clickable-inline-css">
-/* Clickable Cal build-proof images + inline detail */
-.cal-proof-slide{cursor:default}
-.cal-proof-image-button{display:block;width:100%;padding:0;border:0;border-radius:14px;background:transparent;cursor:zoom-in;overflow:hidden;text-align:left}
-.cal-proof-image-button img{display:block;width:100%;height:auto;transition:transform .22s ease,filter .22s ease}
-.cal-proof-image-button:hover img,.cal-proof-image-button:focus-visible img{transform:scale(1.012);filter:contrast(1.02)}
-.cal-proof-image-button:focus-visible{outline:3px solid rgba(25,165,107,.32);outline-offset:4px}
-.cal-proof-open-cue{appearance:none;display:inline-flex;align-items:center;margin-top:20px;padding:0;border:0;background:transparent;color:#0b7a4f;font:inherit;font-size:13px;font-weight:850;cursor:pointer}
-.cal-proof-open-cue:hover{text-decoration:underline;text-underline-offset:4px}
-.cal-proof-open-cue:focus-visible{outline:3px solid rgba(25,165,107,.28);outline-offset:4px;border-radius:4px}
-.cal-proof-inline-detail[hidden]{display:none!important}
-.cal-proof-inline-detail{margin-top:24px;scroll-margin-top:24px;animation:calProofInlineIn .25s ease}
-.cal-proof-inline-detail .cal-proof-detail-card{width:100%;max-height:none;overflow:visible;border:1px solid #cfe3d5;border-radius:28px;background:#fff;padding:28px;box-shadow:0 20px 52px rgba(20,80,55,.12)}
-.cal-proof-inline-detail .cal-proof-detail-close{position:relative;top:auto;float:right;margin:0 0 14px 14px}
-.cal-proof-inline-detail .cal-proof-detail-inner{clear:both}
-.cal-proof-inline-detail .cal-proof-detail-figure img{width:100%;height:auto;display:block;border-radius:16px;border:1px solid #e2ebe5}
-.cal-proof-inline-detail .cal-proof-detail-figure figcaption{margin-top:10px;color:#536259;font-size:13px;font-weight:800}
-@keyframes calProofInlineIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:820px){.cal-proof-inline-detail .cal-proof-detail-card{padding:20px}.cal-proof-inline-detail .cal-proof-detail-inner{grid-template-columns:1fr}}
-</style><style id="calProofLightboxStyles">
-/* Cal build-proof carousel: clickable images with enlarged lightbox */
-.cal-proof-window{touch-action:pan-y;cursor:grab}
-.cal-proof-window.is-dragging{cursor:grabbing;user-select:none}
-.cal-proof-slide{transition:transform .2s ease,filter .2s ease}
-.cal-proof-slide:hover{transform:translateY(-2px)}
-.cal-proof-dots{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x proximity;padding:2px 2px 10px;scrollbar-width:thin;scrollbar-color:#b8dcc6 transparent;-webkit-overflow-scrolling:touch}
-.cal-proof-dots::-webkit-scrollbar{height:7px}
-.cal-proof-dots::-webkit-scrollbar-thumb{background:#b8dcc6;border-radius:999px}
-.cal-proof-dots::-webkit-scrollbar-track{background:transparent}
-.cal-proof-dot{flex:0 0 auto;scroll-snap-align:center}
-.cal-proof-nav:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
-.cal-proof-image-button{display:block;width:100%;padding:0;border:0;border-radius:14px;background:transparent;cursor:zoom-in;position:relative;overflow:hidden}
-.cal-proof-image-button:focus-visible{outline:4px solid rgba(25,165,107,.34);outline-offset:4px}
-.cal-proof-image-button::after{content:'↗';position:absolute;right:12px;bottom:12px;display:grid;place-items:center;width:34px;height:34px;border-radius:999px;background:rgba(8,47,36,.86);color:#fff;font-size:16px;font-weight:850;opacity:0;transform:translateY(4px);transition:opacity .18s ease,transform .18s ease}
-.cal-proof-image-button:hover::after,.cal-proof-image-button:focus-visible::after{opacity:1;transform:translateY(0)}
-.cal-proof-image-button img{transition:transform .25s ease}
-.cal-proof-image-button:hover img{transform:scale(1.012)}
-.cal-proof-lightbox{position:fixed;inset:0;z-index:10000;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(4,27,20,.82);backdrop-filter:blur(9px)}
-.cal-proof-lightbox.open{display:flex;animation:calProofLightboxFade .18s ease}
-.cal-proof-lightbox-dialog{position:relative;width:min(1540px,96vw);max-height:94vh;display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-rows:auto minmax(0,1fr);gap:14px;align-items:center;border:1px solid rgba(255,255,255,.2);border-radius:26px;padding:18px;background:#f8fcf9;box-shadow:0 34px 100px rgba(0,0,0,.42)}
-.cal-proof-lightbox-top{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:0 2px}
-.cal-proof-lightbox-title{display:flex;align-items:baseline;gap:12px;min-width:0}
-.cal-proof-lightbox-title strong{color:#10251c;font-size:18px;line-height:1.2}
-.cal-proof-lightbox-counter{color:#0b7a4f;font-size:13px;font-weight:850;white-space:nowrap}
-.cal-proof-lightbox-close{appearance:none;border:1px solid #b8dcc6;border-radius:999px;background:#fff;color:#0b7a4f;padding:9px 14px;font:inherit;font-size:13px;font-weight:850;cursor:pointer}
-.cal-proof-lightbox-close:hover{background:#eaf8f0}
-.cal-proof-lightbox-close:focus-visible,.cal-proof-lightbox-arrow:focus-visible{outline:3px solid rgba(25,165,107,.36);outline-offset:3px}
-.cal-proof-lightbox-figure{grid-column:2;grid-row:2;margin:0;min-width:0;min-height:0;overflow:auto;border:1px solid #d8e7dd;border-radius:18px;background:#fff;padding:10px}
-.cal-proof-lightbox-image{display:block;width:100%;height:auto;max-height:calc(94vh - 94px);object-fit:contain;border-radius:10px}
-.cal-proof-lightbox-arrow{appearance:none;border:1px solid #b8dcc6;border-radius:18px;background:#fff;color:#0b7a4f;width:52px;height:82px;font:inherit;font-size:34px;font-weight:700;cursor:pointer}
-.cal-proof-lightbox-arrow:hover{background:#eaf8f0}
-.cal-proof-lightbox-arrow:disabled{opacity:.35;cursor:not-allowed}
-.cal-proof-lightbox-prev{grid-column:1;grid-row:2}
-.cal-proof-lightbox-next{grid-column:3;grid-row:2}
-@keyframes calProofLightboxFade{from{opacity:0}to{opacity:1}}
-@media(max-width:760px){
-  .cal-proof-lightbox{padding:10px}
-  .cal-proof-lightbox-dialog{width:100%;max-height:97vh;padding:12px;grid-template-columns:44px minmax(0,1fr) 44px;gap:8px;border-radius:20px}
-  .cal-proof-lightbox-arrow{width:44px;height:64px;font-size:28px}
-  .cal-proof-lightbox-title strong{font-size:15px}
-  .cal-proof-lightbox-image{max-height:calc(97vh - 86px)}
-}
-@media(prefers-reduced-motion:reduce){.cal-proof-track,.cal-proof-slide,.cal-proof-image-button img,.cal-proof-lightbox{transition:none!important;animation:none!important}}
 </style><style>
 /* Cal portfolio footer */
 .site-footer.cal-portfolio-footer{
@@ -389,90 +326,8 @@ main > .section-pad:first-of-type .section-heading h1{
 @media(prefers-reduced-motion:reduce){.cal-dp-replay.run *{animation:none!important}}
 </style>
 <meta content="single-file-self-contained" name="cal-package"/>
-<style id="cal-proof-font-fix">
-/* Match Working MVP Evidence typography to the rest of Cal */
-.cal-proof-section,
-.cal-proof-section *,
-.cal-proof-section button {
-  font-family: Inter, Arial, Helvetica, sans-serif !important;
-  font-synthesis: none;
-}
-.cal-proof-section .section-heading .eyebrow {
-  margin: 0 0 10px;
-  color: #0b8a58;
-  font-size: 12px;
-  line-height: 1.2;
-  font-weight: 850;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-.cal-proof-section .section-heading h2 {
-  margin: 0 0 12px;
-  color: #10251c;
-  font-size: clamp(2.25rem, 4.4vw, 4.15rem);
-  line-height: .98;
-  font-weight: 850;
-  letter-spacing: -.055em;
-}
-.cal-proof-section .section-heading > p:last-child {
-  color: #5f6f66;
-  font-size: 16px;
-  line-height: 1.55;
-}
-.cal-proof-section .cal-proof-kicker {
-  font-family: Inter, Arial, Helvetica, sans-serif !important;
-  font-weight: 850;
-}
-.cal-proof-section .cal-proof-copy h3 {
-  font-family: Inter, Arial, Helvetica, sans-serif !important;
-  font-weight: 850;
-}
-.cal-proof-section .cal-proof-headline {
-  font-family: Inter, Arial, Helvetica, sans-serif !important;
-  font-weight: 850;
-}
-.cal-proof-section .cal-proof-copy p,
-.cal-proof-section .cal-proof-caption,
-.cal-proof-section .cal-proof-dot,
-.cal-proof-section .cal-proof-nav {
-  font-family: Inter, Arial, Helvetica, sans-serif !important;
-}
-</style>
-<style id="cal-proof-compact-scale">
-/* Working MVP evidence: keep content 30% smaller while restoring the section to full visual width */
-#build-proof-carousel{
-  zoom:.70;
-  width:143%;
-  max-width:1972px;
-  position:relative;
-  left:50%;
-  transform:translateX(-50%);
-}
-@supports not (zoom:1){
-  #build-proof-carousel{
-    zoom:1;
-    width:142.857%;
-    max-width:1972px;
-    transform:translateX(-50%) scale(.70);
-    transform-origin:top center;
-  }
-}
-@media(max-width:760px){
-  #build-proof-carousel{
-    zoom:.86;
-    width:116.3%;
-    max-width:none;
-  }
-  @supports not (zoom:1){
-    #build-proof-carousel{
-      zoom:1;
-      width:116.279%;
-      max-width:none;
-      transform:translateX(-50%) scale(.86);
-    }
-  }
-}
-</style>
+
+
 <style id="cal-proves-font-match">
 .cal-proves-section,
 .cal-proves-section .cal-proves-eyebrow,
@@ -482,159 +337,9 @@ main > .section-pad:first-of-type .section-heading h1{
   font-synthesis:none;
 }
 </style>
-<style id="cal-proof-description-compact-fix">
-/* Compact, content-sized description cards in Working MVP Evidence */
-#build-proof-carousel .cal-proof-copy{
-  align-self:start !important;
-  height:auto !important;
-  min-height:0 !important;
-  padding:14px 16px 15px !important;
-  border:1px solid #cfe3d5 !important;
-  border-radius:16px !important;
-  background:linear-gradient(180deg,#ffffff 0%,#fbfefc 100%) !important;
-  box-shadow:0 6px 16px rgba(20,80,55,.035) !important;
-  display:block !important;
-}
-#build-proof-carousel .cal-proof-kicker{
-  margin:0 0 6px !important;
-  font-size:10px !important;
-  line-height:1.15 !important;
-  letter-spacing:.11em !important;
-}
-#build-proof-carousel .cal-proof-copy h3{
-  margin:0 0 5px !important;
-  font-size:24px !important;
-  line-height:1.08 !important;
-  letter-spacing:-.025em !important;
-}
-#build-proof-carousel .cal-proof-headline{
-  margin:0 0 6px !important;
-  font-size:13px !important;
-  line-height:1.3 !important;
-}
-#build-proof-carousel .cal-proof-copy p{
-  margin:0 !important;
-  max-width:1100px !important;
-  font-size:13px !important;
-  line-height:1.42 !important;
-}
-#build-proof-carousel .cal-proof-slide{
-  grid-template-rows:auto auto !important;
-  align-content:start !important;
-  gap:12px !important;
-}
-@media(max-width:720px){
-  #build-proof-carousel .cal-proof-copy{padding:13px 14px !important;border-radius:14px !important}
-  #build-proof-carousel .cal-proof-copy h3{font-size:21px !important}
-}
-</style>
-<style id="cal-proof-description-tight-font-final">
-/* Final fix: content-sized proof description cards and matched Cal typography */
-#build-proof-carousel .cal-proof-track{
-  align-items:flex-start !important;
-}
-#build-proof-carousel .cal-proof-slide{
-  display:flex !important;
-  flex-direction:column !important;
-  align-self:flex-start !important;
-  height:auto !important;
-  min-height:0 !important;
-  block-size:auto !important;
-  gap:10px !important;
-}
-#build-proof-carousel .cal-proof-copy{
-  box-sizing:border-box !important;
-  flex:0 0 auto !important;
-  align-self:flex-start !important;
-  width:100% !important;
-  height:auto !important;
-  min-height:0 !important;
-  max-height:none !important;
-  block-size:auto !important;
-  min-block-size:0 !important;
-  padding:12px 15px 13px !important;
-  border:1px solid #cfe3d5 !important;
-  border-radius:14px !important;
-  overflow:visible !important;
-  background:#fff !important;
-  box-shadow:none !important;
-  font-family:Inter,Arial,Helvetica,sans-serif !important;
-  font-synthesis:none !important;
-}
-#build-proof-carousel .cal-proof-kicker,
-#build-proof-carousel .cal-proof-copy h3,
-#build-proof-carousel .cal-proof-headline,
-#build-proof-carousel .cal-proof-copy p{
-  font-family:Inter,Arial,Helvetica,sans-serif !important;
-}
-#build-proof-carousel .cal-proof-kicker{
-  display:block !important;
-  margin:0 0 5px !important;
-  color:#0b8a58 !important;
-  font-size:11px !important;
-  line-height:1.2 !important;
-  font-weight:850 !important;
-  letter-spacing:.115em !important;
-  text-transform:uppercase !important;
-}
-#build-proof-carousel .cal-proof-copy h3{
-  margin:0 0 4px !important;
-  color:#132019 !important;
-  font-size:27px !important;
-  line-height:1.04 !important;
-  font-weight:850 !important;
-  letter-spacing:-.035em !important;
-}
-#build-proof-carousel .cal-proof-headline{
-  display:block !important;
-  margin:0 0 5px !important;
-  color:#184b37 !important;
-  font-size:14px !important;
-  line-height:1.3 !important;
-  font-weight:850 !important;
-}
-#build-proof-carousel .cal-proof-copy p{
-  margin:0 !important;
-  color:#5b6a60 !important;
-  font-size:14px !important;
-  line-height:1.42 !important;
-  font-weight:400 !important;
-}
-#build-proof-carousel .cal-proof-figure{
-  flex:0 0 auto !important;
-  align-self:stretch !important;
-  margin-top:0 !important;
-}
-@media(max-width:720px){
-  #build-proof-carousel .cal-proof-copy{padding:11px 13px 12px !important;border-radius:13px !important}
-  #build-proof-carousel .cal-proof-copy h3{font-size:23px !important}
-  #build-proof-carousel .cal-proof-copy p{font-size:13px !important}
-}
-</style>
-<style id="cal-proof-active-height-fix">
-/* Keep the carousel viewport only as tall as the selected artifact. */
-#build-proof-carousel .cal-proof-window{
-  height:auto;
-  transition:height .28s ease;
-}
-#build-proof-carousel .cal-proof-stage{
-  align-items:start !important;
-}
-#build-proof-carousel .cal-proof-nav{
-  align-self:stretch;
-}
-@media(prefers-reduced-motion:reduce){
-  #build-proof-carousel .cal-proof-window{transition:none !important;}
-}
-</style>
-<style id="cal-proof-final-height-fix">
-#build-proof-carousel .cal-proof-track{display:flex;align-items:flex-start}
-#build-proof-carousel .cal-proof-slide{flex:0 0 100%;align-self:flex-start}
-#build-proof-carousel .cal-proof-window{overflow:hidden;transition:height .28s ease}
-#build-proof-carousel .cal-proof-stage{align-items:start}
-</style>
+
 <style id="cal-panel-width-lock-final">
-/* Keep the Product Thesis, Decision Path, and Working MVP Evidence at one exact visual width. */
+
 :root{--cal-panel-width:1380px}
 .cal-thesis-panel,
 .cal-decision-path-section,
@@ -700,6 +405,8 @@ main > .section-pad:first-of-type .section-heading h1{
   max-width:1380px;
   margin:44px auto 0;
   padding:0 16px 76px;
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  font-synthesis:none;
 }
 #build-proof-carousel .cal-operator-model-shell{
   border:1px solid #d7e7dc;
@@ -710,8 +417,9 @@ main > .section-pad:first-of-type .section-heading h1{
 }
 #build-proof-carousel .cal-operator-model-heading{
   max-width:980px;
-  margin:0 0 30px;
+  margin:0 0 22px;
   text-align:left;
+  font-family:inherit;
 }
 #build-proof-carousel .cal-operator-model-heading .eyebrow{
   margin:0 0 10px;
@@ -722,20 +430,15 @@ main > .section-pad:first-of-type .section-heading h1{
   letter-spacing:.13em;
   text-transform:uppercase;
 }
-#build-proof-carousel .cal-operator-model-heading h2{
-  margin:0 0 14px;
-  color:#10231a;
-  font-size:clamp(3rem,5.3vw,5.25rem);
-  line-height:.96;
-  letter-spacing:-.06em;
-  font-weight:850;
-}
 #build-proof-carousel .cal-operator-model-heading > p:last-child{
   max-width:920px;
   margin:0;
   color:#526159;
-  font-size:clamp(1rem,1.35vw,1.18rem);
-  line-height:1.62;
+  font-family:inherit;
+  font-size:15px;
+  font-weight:400;
+  line-height:1.55;
+  letter-spacing:0;
 }
 #build-proof-carousel .cal-operator-model-figure{
   margin:0;
@@ -754,7 +457,6 @@ main > .section-pad:first-of-type .section-heading h1{
   #build-proof-carousel.cal-operator-model-section{margin-top:28px;padding:0 12px 52px}
   #build-proof-carousel .cal-operator-model-shell{padding:28px 20px 20px;border-radius:22px}
   #build-proof-carousel .cal-operator-model-heading{margin-bottom:20px}
-  #build-proof-carousel .cal-operator-model-heading h2{font-size:clamp(2.5rem,13vw,4rem)}
   #build-proof-carousel .cal-operator-model-figure{border-radius:16px}
 }
 </style></head>
@@ -906,11 +608,10 @@ main > .section-pad:first-of-type .section-heading h1{
 </div>
 </div>
 </section>
-<section aria-labelledby="cal-operator-model-title" class="section-pad slim reveal cal-operator-model-section" id="build-proof-carousel">
+<section aria-label="Cal operator model" class="section-pad slim reveal cal-operator-model-section" id="build-proof-carousel">
 <div class="cal-operator-model-shell">
 <div class="cal-operator-model-heading">
 <p class="eyebrow">Operator model</p>
-<h2 id="cal-operator-model-title">Operator Model</h2>
 <p>This view shows how Cal routes plumbing service requests through intake, triage, review, and briefing so the office team can make informed decisions and take action.</p>
 </div>
 <figure class="cal-operator-model-figure">
@@ -1219,234 +920,7 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
   if(openBtn&&modal&&closeBtn){openBtn.addEventListener('click',openBrief);closeBtn.addEventListener('click',closeBrief);if(returnBtn)returnBtn.addEventListener('click',closeBrief);modal.addEventListener('click',function(e){if(e.target===modal)closeBrief();});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('open'))closeBrief();});}
 })();
 </script>
-<script id="cal-proof-clickable-inline-js">(function(){
-  function initCalProofCarousel(){
-    var section=document.getElementById('build-proof-carousel');
-    var root=section && section.querySelector('[data-cal-proof-carousel]');
-    if(!root) return;
 
-    var track=root.querySelector('.cal-proof-track');
-    var proofWindow=root.querySelector('.cal-proof-window');
-    var slides=[].slice.call(root.querySelectorAll('.cal-proof-slide'));
-    var tabs=[].slice.call(root.querySelectorAll('.cal-proof-dot'));
-    var prev=root.querySelector('.cal-proof-nav.prev');
-    var next=root.querySelector('.cal-proof-nav.next');
-    var imageButtons=[].slice.call(root.querySelectorAll('.cal-proof-image-button'));
-
-    var lightbox=document.getElementById('calProofLightbox');
-    var lightboxDialog=lightbox && lightbox.querySelector('.cal-proof-lightbox-dialog');
-    var lightboxImg=document.getElementById('calProofLightboxImage');
-    var lightboxTitle=document.getElementById('calProofLightboxTitle');
-    var lightboxCounter=document.getElementById('calProofLightboxCounter');
-    var lightboxClose=document.getElementById('calProofLightboxClose');
-    var lightboxPrev=document.getElementById('calProofLightboxPrev');
-    var lightboxNext=document.getElementById('calProofLightboxNext');
-
-    var index=0;
-    var lightboxIndex=0;
-    var startX=0;
-    var lastFocus=null;
-
-    function syncProofWindowHeight(){
-      if(!proofWindow || !slides[index]) return;
-      // Size the viewport to the natural height of the active slide only.
-      window.requestAnimationFrame(function(){
-        var activeSlide=slides[index];
-        var height=Math.ceil(activeSlide.scrollHeight || activeSlide.offsetHeight || activeSlide.getBoundingClientRect().height);
-        if(height>0) proofWindow.style.height=height+'px';
-      });
-    }
-
-    function update(options){
-      options=options||{};
-      track.style.transform='translateX('+(-index*100)+'%)';
-
-      tabs.forEach(function(tab,i){
-        var active=i===index;
-        tab.classList.toggle('active',active);
-        tab.setAttribute('aria-selected',active?'true':'false');
-        tab.setAttribute('tabindex',active?'0':'-1');
-        if(active && options.scrollTab){
-          tab.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
-        }
-      });
-
-      slides.forEach(function(slide,i){
-        var active=i===index;
-        slide.setAttribute('aria-hidden',active?'false':'true');
-        slide.inert=!active;
-        var imageButton=slide.querySelector('.cal-proof-image-button');
-        if(imageButton) imageButton.setAttribute('tabindex',active?'0':'-1');
-      });
-
-      if(prev) prev.disabled=index===0;
-      if(next) next.disabled=index===slides.length-1;
-      if(options.focusTab && tabs[index]) tabs[index].focus();
-      syncProofWindowHeight();
-    }
-
-    function go(i,options){
-      index=Math.max(0,Math.min(slides.length-1,i));
-      update(options);
-    }
-
-    function renderLightbox(i){
-      lightboxIndex=Math.max(0,Math.min(imageButtons.length-1,i));
-      var button=imageButtons[lightboxIndex];
-      var img=button && button.querySelector('img');
-      if(!img) return;
-
-      lightboxImg.src=img.src;
-      lightboxImg.alt=img.alt;
-      lightboxTitle.textContent=(tabs[lightboxIndex] && tabs[lightboxIndex].textContent.trim()) || img.alt;
-      lightboxCounter.textContent=(lightboxIndex+1)+' / '+imageButtons.length;
-      lightboxPrev.disabled=lightboxIndex===0;
-      lightboxNext.disabled=lightboxIndex===imageButtons.length-1;
-    }
-
-    function getLightboxFocusable(){
-      if(!lightboxDialog) return [];
-      return [].slice.call(lightboxDialog.querySelectorAll(
-        'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
-      )).filter(function(el){
-        return !el.hidden && el.offsetParent!==null;
-      });
-    }
-
-    function openLightbox(i,trigger){
-      lastFocus=trigger || document.activeElement;
-      go(i);
-      renderLightbox(i);
-      lightbox.classList.add('open');
-      lightbox.setAttribute('aria-hidden','false');
-      document.body.style.overflow='hidden';
-      lightboxClose.focus();
-    }
-
-    function closeLightbox(){
-      lightbox.classList.remove('open');
-      lightbox.setAttribute('aria-hidden','true');
-      document.body.style.overflow='';
-      if(lastFocus && typeof lastFocus.focus==='function') lastFocus.focus();
-    }
-
-    if(prev) prev.addEventListener('click',function(){go(index-1,{scrollTab:true});});
-    if(next) next.addEventListener('click',function(){go(index+1,{scrollTab:true});});
-
-    tabs.forEach(function(tab){
-      tab.addEventListener('click',function(){
-        var target=Number(tab.getAttribute('data-proof-target'));
-        if(!Number.isFinite(target)) target=tabs.indexOf(tab);
-        go(target,{scrollTab:true});
-      });
-    });
-
-    imageButtons.forEach(function(button,i){
-      button.addEventListener('click',function(){openLightbox(i,button);});
-    });
-
-    if(lightboxClose) lightboxClose.addEventListener('click',closeLightbox);
-    if(lightboxPrev) lightboxPrev.addEventListener('click',function(){
-      renderLightbox(lightboxIndex-1);
-      go(lightboxIndex);
-    });
-    if(lightboxNext) lightboxNext.addEventListener('click',function(){
-      renderLightbox(lightboxIndex+1);
-      go(lightboxIndex);
-    });
-    if(lightbox) lightbox.addEventListener('click',function(e){
-      if(e.target===lightbox) closeLightbox();
-    });
-
-    // Carousel keyboard controls only operate when focus is inside the carousel.
-    root.addEventListener('keydown',function(e){
-      if(lightbox.classList.contains('open')) return;
-      var currentTab=e.target.closest('.cal-proof-dot');
-
-      if(currentTab && (e.key==='ArrowLeft' || e.key==='ArrowRight' || e.key==='Home' || e.key==='End')){
-        e.preventDefault();
-        if(e.key==='Home') go(0,{focusTab:true,scrollTab:true});
-        else if(e.key==='End') go(tabs.length-1,{focusTab:true,scrollTab:true});
-        else go(index+(e.key==='ArrowRight'?1:-1),{focusTab:true,scrollTab:true});
-        return;
-      }
-
-      if(e.key==='ArrowLeft' || e.key==='ArrowRight'){
-        e.preventDefault();
-        go(index+(e.key==='ArrowRight'?1:-1));
-      }
-    });
-
-    // Lightbox keyboard controls and focus trap.
-    document.addEventListener('keydown',function(e){
-      if(!lightbox.classList.contains('open')) return;
-
-      if(e.key==='Escape'){
-        e.preventDefault();
-        closeLightbox();
-        return;
-      }
-      if(e.key==='ArrowLeft'){
-        e.preventDefault();
-        renderLightbox(lightboxIndex-1);
-        go(lightboxIndex);
-        return;
-      }
-      if(e.key==='ArrowRight'){
-        e.preventDefault();
-        renderLightbox(lightboxIndex+1);
-        go(lightboxIndex);
-        return;
-      }
-      if(e.key==='Tab'){
-        var focusable=getLightboxFocusable();
-        if(!focusable.length){
-          e.preventDefault();
-          lightboxDialog.focus();
-          return;
-        }
-        var first=focusable[0];
-        var last=focusable[focusable.length-1];
-        var active=document.activeElement;
-
-        if(e.shiftKey && (active===first || !lightboxDialog.contains(active))){
-          e.preventDefault();
-          last.focus();
-        }else if(!e.shiftKey && active===last){
-          e.preventDefault();
-          first.focus();
-        }
-      }
-    });
-
-    var win=root.querySelector('.cal-proof-window');
-    if(win){
-      win.addEventListener('touchstart',function(e){
-        startX=e.touches[0].clientX;
-      },{passive:true});
-      win.addEventListener('touchend',function(e){
-        var dx=e.changedTouches[0].clientX-startX;
-        if(Math.abs(dx)>45) go(index+(dx<0?1:-1));
-      },{passive:true});
-    }
-
-    // Image dimensions can settle after the first paint, so resync when they load.
-    slides.forEach(function(slide){
-      var img=slide.querySelector('img');
-      if(img && !img.complete) img.addEventListener('load',syncProofWindowHeight,{once:true});
-    });
-    window.addEventListener('resize',syncProofWindowHeight);
-    if(document.fonts && document.fonts.ready){document.fonts.ready.then(syncProofWindowHeight);}
-
-    update();
-  }
-
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',initCalProofCarousel);
-  }else{
-    initCalProofCarousel();
-  }
-})();</script>
 <script>
 (function(){
   var box=document.getElementById('calDecisionReplayBox');
@@ -1457,20 +931,6 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
   if('IntersectionObserver' in window){var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){replay();observer.disconnect();}});},{threshold:.35});observer.observe(box);}
 })();
 </script>
-<div aria-hidden="true" class="cal-proof-lightbox" id="calProofLightbox">
-<div aria-labelledby="calProofLightboxTitle" aria-modal="true" class="cal-proof-lightbox-dialog" role="dialog" tabindex="-1">
-<div class="cal-proof-lightbox-top">
-<div class="cal-proof-lightbox-title">
-<strong id="calProofLightboxTitle">Cal working MVP evidence</strong>
-<span class="cal-proof-lightbox-counter" id="calProofLightboxCounter">1 / 6</span>
-</div>
-<button class="cal-proof-lightbox-close" id="calProofLightboxClose" type="button">Close</button>
-</div>
-<button aria-label="Previous artifact" class="cal-proof-lightbox-arrow cal-proof-lightbox-prev" id="calProofLightboxPrev" type="button">‹</button>
-<figure class="cal-proof-lightbox-figure"><img alt="" class="cal-proof-lightbox-image" id="calProofLightboxImage"/></figure>
-<button aria-label="Next artifact" class="cal-proof-lightbox-arrow cal-proof-lightbox-next" id="calProofLightboxNext" type="button">›</button>
-</div>
-</div>
 </body>
 </html>
 <script async="" data-cookie-opt-in="true" data-deployment-id="dpl_8cuC7TQ8WBJ4fd1a1h1AzcFAf255" data-explicit-opt-in="true" src="https://vercel.live/_next-live/feedback/feedback.js"></script>
