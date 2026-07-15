@@ -280,13 +280,6 @@ main > .section-pad:first-of-type .section-heading h1{
 }
 </style>
 <style>
-.cal-proves-section{max-width:980px;margin:42px auto 46px;text-align:center;padding:0 22px;color:#0f2d22}
-.cal-proves-eyebrow{margin:0 0 14px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:850;color:#66766e}
-.cal-proves-section h2{margin:0 0 18px;font-size:clamp(34px,4.2vw,58px);line-height:1.04;letter-spacing:-.045em;color:#0c2a20}
-.cal-proves-section p:last-child{max-width:940px;margin:0 auto;font-size:18px;line-height:1.55;color:#617168}
-@media(max-width:700px){.cal-proves-section{margin:30px auto 34px}.cal-proves-section p:last-child{font-size:16px}.cal-proves-section h2{font-size:clamp(30px,10vw,42px)}}
-</style>
-<style>
 .cal-decision-path-section{max-width:1380px;margin:34px auto 56px;padding:0}
 .cal-dp-shell{width:100%;background:linear-gradient(180deg,#fff,#f8fcfa);border:1px solid #d6e6db;border-radius:34px;box-shadow:0 22px 70px rgba(20,80,55,.12);padding:24px;font-family:Inter,Arial,Helvetica,sans-serif;font-synthesis:none}.cal-dp-shell button{font-family:inherit}
 .cal-dp-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin:0 0 12px}
@@ -326,18 +319,6 @@ main > .section-pad:first-of-type .section-heading h1{
 @media(prefers-reduced-motion:reduce){.cal-dp-replay.run *{animation:none!important}}
 </style>
 <meta content="single-file-self-contained" name="cal-package"/>
-
-
-<style id="cal-proves-font-match">
-.cal-proves-section,
-.cal-proves-section .cal-proves-eyebrow,
-.cal-proves-section h2,
-.cal-proves-section p{
-  font-family:Inter,Arial,Helvetica,sans-serif!important;
-  font-synthesis:none;
-}
-</style>
-
 <style id="cal-panel-width-lock-final">
 
 :root{--cal-panel-width:1380px}
@@ -459,7 +440,12 @@ main > .section-pad:first-of-type .section-heading h1{
   #build-proof-carousel .cal-operator-model-heading{margin-bottom:20px}
   #build-proof-carousel .cal-operator-model-figure{border-radius:16px}
 }
-</style></head>
+</style>
+<style id="cal-proves-removal-spacing">
+/* The proof statement was intentionally removed; the Decision Path now follows directly. */
+.cal-decision-path-section{margin-top:28px!important;}
+</style>
+</head>
 <body id="top">
 <header class="site-header" id="top">
 <nav aria-label="Primary navigation" class="nav-wrap">
@@ -560,11 +546,6 @@ main > .section-pad:first-of-type .section-heading h1{
 <strong>Do Cal’s core artifacts help L.E. Isley &amp; Sons Plumbing turn messy service requests into faster, more consistent decisions by surfacing urgent or high-risk work sooner and clarifying the right next action—without removing human control?</strong>
 </div>
 </div>
-</section>
-<section aria-labelledby="cal-proves-title" class="cal-proves-section reveal">
-<p class="cal-proves-eyebrow">What Cal proves</p>
-<h2 id="cal-proves-title">Clarity before dispatch.</h2>
-<p>Built around the L.E. Isley &amp; Sons Plumbing workflow, Cal demonstrates a reusable AtlasFlow pattern for field service: a messy request becomes AI triage, a structured job record, Operational Viewer visibility, human review, and a clear recommended next action.</p>
 </section>
 <section aria-label="AtlasFlow Decision Path for Cal" class="cal-decision-path-section reveal">
 <div class="cal-dp-shell" id="calDecisionPathCard">
