@@ -326,8 +326,6 @@ main > .section-pad:first-of-type .section-heading h1{
 @media(prefers-reduced-motion:reduce){.cal-dp-replay.run *{animation:none!important}}
 </style>
 <meta content="single-file-self-contained" name="cal-package"/>
-
-
 <style id="cal-proves-font-match">
 .cal-proves-section,
 .cal-proves-section .cal-proves-eyebrow,
@@ -337,7 +335,6 @@ main > .section-pad:first-of-type .section-heading h1{
   font-synthesis:none;
 }
 </style>
-
 <style id="cal-panel-width-lock-final">
 
 :root{--cal-panel-width:1380px}
@@ -640,7 +637,39 @@ main > .section-pad:first-of-type .section-heading h1{
   .cal-attention-actions{align-items:flex-start;flex-direction:column}.cal-attention-buttons{justify-content:flex-start}
 }
 </style>
-</head>
+<style id="cal-thesis-arc-format-override">
+/* Cal thesis aligned to the Arc overview + thesis format */
+.cal-thesis-content{max-width:1180px}
+.cal-thesis-overview-kicker{margin-bottom:14px!important}
+.cal-thesis-overview{
+  max-width:1100px;
+  margin:0 0 34px;
+  color:rgba(255,255,255,.82);
+  font-size:clamp(1rem,1.55vw,1.28rem);
+  line-height:1.55;
+  font-weight:450;
+}
+.cal-thesis-product-kicker{margin-bottom:18px!important}
+.cal-thesis-panel h2{
+  max-width:1160px;
+  margin:0 0 28px;
+  font-size:clamp(2.15rem,4.3vw,4.6rem);
+  line-height:1.02;
+  letter-spacing:-.05em;
+}
+.cal-thesis-rule{max-width:1100px;margin-bottom:18px}
+.cal-thesis-validation{max-width:1060px}
+.cal-thesis-validation strong{
+  margin-top:8px;
+  font-size:clamp(.95rem,1.35vw,1.16rem);
+  line-height:1.48;
+  font-weight:650;
+}
+@media(max-width:760px){
+  .cal-thesis-overview{margin-bottom:28px;font-size:1rem}
+  .cal-thesis-panel h2{font-size:clamp(2rem,9.5vw,3rem)}
+}
+</style></head>
 <body id="top">
 <header class="site-header" id="top">
 <nav aria-label="Primary navigation" class="nav-wrap">
@@ -732,18 +761,9 @@ main > .section-pad:first-of-type .section-heading h1{
 <section aria-labelledby="cal-thesis-title" class="cal-thesis-panel reveal">
 <div aria-hidden="true" class="cal-thesis-orb cal-thesis-orb-one"></div>
 <div aria-hidden="true" class="cal-thesis-orb cal-thesis-orb-two"></div>
-<div class="cal-thesis-content">
-<p class="cal-thesis-kicker">Product thesis</p>
-<h2 id="cal-thesis-title">Service requests arrive messy and inconsistent, forcing dispatchers to interpret urgency, risk, and next steps manually. Cal can turn that unstructured input into clear, prioritized, dispatch-ready work while directing owner attention to the requests that matter most.</h2>
-<div class="cal-thesis-rule"></div>
-<div class="cal-thesis-validation">
-<p>Validation question</p>
-<strong>Do Cal’s core artifacts help L.E. Isley &amp; Sons Plumbing turn messy service requests into faster, more consistent decisions by surfacing urgent or high-risk work sooner and clarifying the right next action—without removing human control?</strong>
-</div>
-</div>
+<div class="cal-thesis-content"><p class="cal-thesis-kicker cal-thesis-overview-kicker">Cal overview</p><p class="cal-thesis-overview">Cal is the service-request triage and owner-visibility layer around a plumbing team’s existing intake and dispatch workflow. It structures incoming requests, identifies urgency and risk, surfaces what needs attention, supports the human decision, and turns the daily queue into a clear owner operating brief.</p><p class="cal-thesis-kicker cal-thesis-product-kicker">Cal product thesis</p><h2 id="cal-thesis-title">Can Cal turn a messy service request into a trusted, prioritized human decision—and then ensure the right request, risk signal, next action, and owner attention are clearly surfaced before dispatch?</h2><div class="cal-thesis-rule"></div><div class="cal-thesis-validation"><p>Validation question</p><strong>Can Cal turn a messy service request into a trusted, prioritized human decision—and then ensure the right request, risk signal, next action, and owner attention are clearly surfaced before dispatch?</strong></div></div>
 </section>
 <section aria-labelledby="cal-proves-title" class="cal-proves-section reveal">
-
 <h2 id="cal-proves-title">Clarity before dispatch.</h2>
 <p>Built around the L.E. Isley &amp; Sons Plumbing workflow, Cal demonstrates a reusable AtlasFlow pattern for field service: a messy request becomes AI triage, a structured job record, Operational Viewer visibility, human review, and a clear recommended next action.</p>
 </section>
@@ -801,7 +821,6 @@ main > .section-pad:first-of-type .section-heading h1{
 </div>
 </section>
 </section>
-
 <div aria-hidden="true" class="cal-brief-modal" id="calMorningBriefModal">
 <section aria-labelledby="calBriefTitle" aria-modal="true" class="cal-brief-dialog cal-brief-image-dialog" role="dialog" tabindex="-1">
 <h3 class="sr-only" id="calBriefTitle">Owner Morning Brief — Tuesday, July 14, 2026</h3>
@@ -813,7 +832,7 @@ main > .section-pad:first-of-type .section-heading h1{
 </div>
 <button aria-label="Return to Command Center" class="cal-brief-return" id="calMorningBriefReturn" type="button">Return to Command Center <span aria-hidden="true" class="cal-brief-return-arrow">→</span></button>
 </div>
-<div class="cal-brief-screen cal-attention-detail" id="calAttentionDetailScreen" hidden>
+<div class="cal-brief-screen cal-attention-detail" hidden="" id="calAttentionDetailScreen">
 <header class="cal-attention-detail-top">
 <div class="cal-attention-detail-brand">
 <div class="cal-attention-detail-brandmark"><div aria-hidden="true" class="cal-attention-detail-icon">!</div><div><span class="cal-attention-detail-kicker">Owner Morning Brief · Attention Detail</span><h3>Why today is Yellow</h3><p>Two urgent jobs remain unassigned, and one repeat-service request needs an owner decision. Cal is surfacing the sequence of actions—not making the dispatch decision.</p></div></div>
@@ -821,7 +840,7 @@ main > .section-pad:first-of-type .section-heading h1{
 </div>
 </header>
 <div class="cal-attention-detail-body">
-<section class="cal-attention-condition" aria-label="Overall condition detail">
+<section aria-label="Overall condition detail" class="cal-attention-condition">
 <div aria-hidden="true" class="cal-attention-condition-icon">!</div>
 <div><small>Overall condition</small><strong>Yellow — Attention Needed</strong><p>The day remains manageable, but owner or lead-dispatch intervention is required before routine work should proceed normally.</p></div>
 <div class="cal-attention-condition-badge">Human decision required</div>
@@ -832,7 +851,7 @@ main > .section-pad:first-of-type .section-heading h1{
 <article class="cal-attention-kpi"><span>Recommended sequence</span><strong>3</strong><p>Cover urgent work, decide callback, confirm capacity.</p></article>
 </div>
 <div class="cal-attention-main-grid">
-<section class="cal-attention-panel" aria-labelledby="calAttentionRecordsTitle">
+<section aria-labelledby="calAttentionRecordsTitle" class="cal-attention-panel">
 <div class="cal-attention-panel-head"><h4 id="calAttentionRecordsTitle">Requests driving the Yellow condition</h4><span>Ordered by operational risk</span></div>
 <article class="cal-attention-record red"><div aria-hidden="true" class="cal-attention-record-icon">!</div><div><strong>Wilson — Burst supply line</strong><small>Active water and property-damage exposure</small></div><div class="cal-attention-status">Unassigned</div><div class="cal-attention-next"><b>Next:</b> Dispatch an emergency technician now.</div></article>
 <article class="cal-attention-record red"><div aria-hidden="true" class="cal-attention-record-icon">!</div><div><strong>Carter — Sewage backup</strong><small>Health, property, and customer-experience risk</small></div><div class="cal-attention-status">Unassigned</div><div class="cal-attention-next"><b>Next:</b> Confirm dispatch and provide an arrival window.</div></article>
@@ -848,7 +867,6 @@ main > .section-pad:first-of-type .section-heading h1{
 </div>
 </section>
 </div>
-
 </main>
 <footer class="site-footer cal-portfolio-footer"><div aria-label="Cal confidentiality and studio attribution" class="cal-footer-inner"><div class="cal-footer-item">Atlas Studios</div><div class="cal-footer-item">Cal Operational - Viewer</div><div class="cal-footer-item">Confidential</div></div><a aria-label="Back to top" class="back-to-top cal-footer-back" href="#top">Back to top ↑</a></footer>
 <script>
@@ -1185,7 +1203,6 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
   }
 })();
 </script>
-
 <script>
 (function(){
   var box=document.getElementById('calDecisionReplayBox');
@@ -1198,4 +1215,4 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
 </script>
 </body>
 </html>
-<script async="" data-cookie-opt-in="true" data-deployment-id="dpl_8cuC7TQ8WBJ4fd1a1h1AzcFAf255" data-explicit-opt-in="true" src="https://vercel.live/_next-live/feedback/feedback.js"></script><script async data-explicit-opt-in="true" data-cookie-opt-in="true" data-deployment-id="dpl_4XKNqJGW3oPLyzS3zRgCqnrbrVzQ" src="https://vercel.live/_next-live/feedback/feedback.js"></script>
+<script async="" data-cookie-opt-in="true" data-deployment-id="dpl_8cuC7TQ8WBJ4fd1a1h1AzcFAf255" data-explicit-opt-in="true" src="https://vercel.live/_next-live/feedback/feedback.js"></script><script async="" data-cookie-opt-in="true" data-deployment-id="dpl_4XKNqJGW3oPLyzS3zRgCqnrbrVzQ" data-explicit-opt-in="true" src="https://vercel.live/_next-live/feedback/feedback.js"></script>
