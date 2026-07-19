@@ -5,8 +5,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Cal — Operational Viewer | AtlasFlow</title>
-<meta content="Cal is an AtlasFlow field-service workflow designed to turn messy plumbing requests into prioritized, dispatch-ready work while preserving human control." name="description"/>
+<title>Cal — Field-Service Decision Environment | AtlasFlow</title>
+<meta content="Cal is an AtlasFlow field-service decision environment that turns messy service requests into prioritized, dispatch-ready work while keeping human judgment and accountability visible." name="description"/>
 <style>
     /* Embedded Cal logo header update */
     .brand.brand-image {
@@ -689,13 +689,116 @@ main > .section-pad:first-of-type .section-heading h1{
 @media(max-width:900px){.cal-exec-header{grid-template-columns:1fr 1fr}.cal-exec-title{grid-column:1/3;grid-row:1;padding:0 0 16px;border:0;border-bottom:1px solid #dce6df;text-align:center}.cal-exec-company{grid-row:2}.cal-exec-date{grid-row:2}.cal-exec-grid{grid-template-columns:1fr}.cal-exec-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.cal-brief-screen-main{padding:8px}.cal-exec-header{display:block;padding:20px}.cal-exec-title{margin-bottom:16px}.cal-exec-company{margin-bottom:16px}.cal-exec-date{padding:13px 0 0;border-top:1px solid #dce6df}.cal-exec-body{padding:14px}.cal-exec-condition{grid-template-columns:auto 1fr}.cal-exec-condition-link{grid-column:1/3;text-align:center}.cal-exec-kpis{grid-template-columns:1fr 1fr}.cal-exec-job{grid-template-columns:auto 1fr}.cal-exec-chip{grid-column:2}.cal-exec-next{grid-column:2}.cal-exec-footer{align-items:stretch;flex-direction:column}.cal-exec-return{width:100%!important;justify-content:center}}
 </style>
-</head>
+<style id="cal-arc-family-alignment">
+/* ================================================================
+   Cal family alignment — Arc-inspired shell and product foundation
+   ================================================================ */
+:root{
+  --cal-family-ink:#10231F;
+  --cal-family-green:#0B7A4F;
+  --cal-family-green-deep:#075C3C;
+  --cal-family-soft:#EAF8F0;
+  --cal-family-paper:#F4F7F5;
+  --cal-family-hair:#DCE7E0;
+  --cal-family-muted:#66736B;
+}
+html{scroll-behavior:smooth}
+body{background:var(--cal-family-paper)!important;color:var(--cal-family-ink)}
+.site-header{
+  position:sticky!important;top:0;z-index:120!important;
+  background:rgba(255,255,255,.94)!important;
+  border-bottom:1px solid var(--cal-family-hair)!important;
+  backdrop-filter:blur(10px);
+  box-shadow:0 1px 0 rgba(16,35,31,.035);
+}
+.site-header .nav-wrap{
+  width:100%!important;max-width:none!important;min-height:88px;
+  padding:8px 14px!important;margin:0!important;
+  display:flex!important;align-items:center!important;gap:14px!important;
+}
+.site-header .brand-logo{width:178px!important;max-height:70px!important;object-fit:contain}
+.cal-product-context{display:flex;align-items:center;gap:10px;min-width:max-content;padding-left:2px}
+.cal-product-context b{display:block;font-size:15px;letter-spacing:-.015em;color:var(--cal-family-ink)}
+.cal-product-context small{display:block;font-size:11px;color:var(--cal-family-muted);margin-top:-1px;white-space:nowrap}
+.cal-demo-chip{display:inline-flex;align-items:center;border-radius:999px;background:#FFF7E6;color:#8A6400;border:1px solid #F1DC9C;padding:4px 9px;font-size:10px;font-weight:850;letter-spacing:.04em;text-transform:uppercase}
+.cal-priority-ticker{box-shadow:none!important;border-color:var(--cal-family-hair)!important;background:#FBFDFC!important}
+
+.cal-family-shell{display:flex;align-items:flex-start;min-height:calc(100vh - 88px)}
+.cal-family-rail{
+  width:236px;flex:0 0 236px;position:sticky;top:88px;height:calc(100vh - 88px);
+  overflow-y:auto;background:#fff;border-right:1px solid var(--cal-family-hair);
+  padding:16px 12px;display:flex;flex-direction:column;gap:3px;z-index:70;
+  box-shadow:inset -1px 0 0 rgba(16,35,31,.02);
+}
+.cal-family-workspace{flex:1;min-width:0}
+.cal-family-workspace>main{width:100%;padding:18px 18px 56px!important;margin:0!important}
+.cal-family-workspace>.site-footer{margin-left:0!important}
+.cal-rail-group{margin:14px 10px 6px;color:#94A39B;font-size:10px;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
+.cal-rail-group:first-child{margin-top:2px}
+.cal-rail-link{
+  appearance:none;width:100%;display:flex;align-items:center;gap:10px;text-align:left;
+  border:0;border-radius:10px;padding:9px 11px;background:transparent;color:var(--cal-family-muted);
+  font:700 13px/1.25 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  cursor:pointer;text-decoration:none;transition:background .16s ease,color .16s ease,transform .16s ease,box-shadow .16s ease;
+}
+.cal-rail-link:hover{background:#F5F8F6;color:var(--cal-family-ink);transform:translateX(1px)}
+.cal-rail-link.active{background:var(--cal-family-soft);color:var(--cal-family-green-deep);box-shadow:inset 3px 0 0 var(--cal-family-green)}
+.cal-rail-icon{width:24px;height:24px;flex:0 0 24px;border-radius:8px;display:grid;place-items:center;background:#EEF3F0;color:#75837B;font-size:10px;font-weight:900}
+.cal-rail-link.active .cal-rail-icon{background:var(--cal-family-green);color:#fff;box-shadow:0 5px 12px rgba(11,122,79,.20)}
+.cal-rail-foot{margin-top:auto;border-top:1px solid var(--cal-family-hair);padding:14px 10px 2px;color:#89968F;font-size:10.5px;line-height:1.5}
+.cal-rail-foot b{display:block;color:#65736B;margin-bottom:3px}
+.cal-rail-foot span{display:block}
+
+.cal-family-anchor{scroll-margin-top:112px}
+.cal-placement-note{
+  width:max-content;max-width:100%;display:inline-flex;align-items:center;gap:6px;
+  margin:0 0 12px;padding:6px 9px;border-radius:999px;border:1px solid #CFE3D5;
+  background:#F5FCF8;color:var(--cal-family-green);font-size:10px;font-weight:850;
+  letter-spacing:.09em;text-transform:uppercase;
+}
+.cal-placement-note:before{content:"";width:6px;height:6px;border-radius:999px;background:currentColor;box-shadow:0 0 0 4px rgba(11,122,79,.08)}
+.cal-placement-note.on-dark{position:relative;z-index:3;background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.22);color:#D5F8E6;margin-bottom:18px}
+#cal-command-center{margin-top:0!important}
+#cal-overview{box-shadow:0 22px 60px rgba(7,72,50,.18)!important}
+#cal-decision-path .cal-dp-shell,#cal-operator-model{box-shadow:0 10px 30px rgba(20,80,55,.07)}
+
+@media(max-width:1120px){
+  .cal-product-context small{display:none}
+  .cal-product-context{gap:7px}
+  .site-header .brand-logo{width:155px!important}
+}
+@media(max-width:900px){
+  .site-header .nav-wrap{min-height:76px;flex-wrap:wrap!important}
+  .cal-product-context{order:1}
+  .cal-priority-ticker{order:2!important;width:100%!important}
+  .cal-family-shell{display:block}
+  .cal-family-rail{
+    position:sticky;top:76px;width:100%;height:auto;overflow-x:auto;overflow-y:hidden;
+    display:flex;flex-direction:row;align-items:center;gap:6px;padding:8px 10px;
+    border-right:0;border-bottom:1px solid var(--cal-family-hair);box-shadow:0 5px 14px rgba(16,35,31,.04);
+  }
+  .cal-rail-group,.cal-rail-foot{display:none}
+  .cal-rail-link{width:auto;min-width:max-content;padding:8px 10px;box-shadow:none!important}
+  .cal-rail-link.active{box-shadow:inset 0 -3px 0 var(--cal-family-green)!important}
+  .cal-rail-icon{width:22px;height:22px;flex-basis:22px}
+  .cal-family-workspace>main{padding:14px 12px 48px!important}
+  .cal-family-anchor{scroll-margin-top:150px}
+}
+@media(max-width:620px){
+  .site-header .brand-logo{width:138px!important}
+  .cal-product-context b{font-size:13px}
+  .cal-demo-chip{display:none}
+  .cal-family-rail{top:72px}
+  .cal-rail-link span:last-child{font-size:11px}
+  .cal-placement-note{font-size:9px;white-space:normal}
+}
+</style></head>
 <body id="top">
 <header class="site-header" id="site-header">
 <nav aria-label="Primary navigation" class="nav-wrap">
 <a aria-label="Cal home" class="brand brand-image" href="#top">
 <img alt="L.E. Isley &amp; Sons Plumbing logo" class="brand-logo" src="data:image/png;base64,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"/>
-</a>
+</a><div class="cal-product-context"><div><b>Cal</b><small>Field-service decision environment</small></div><span class="cal-demo-chip">Prototype</span></div>
 <div aria-label="Today's high-priority customers" class="cal-priority-ticker">
 <div class="cal-priority-label">Today's high-priority customers</div>
 <div class="cal-priority-viewport">
@@ -714,10 +817,19 @@ main > .section-pad:first-of-type .section-heading h1{
 </div>
 </div>
 </nav>
-</header>
-<main>
+</header><div class="cal-family-shell"><aside aria-label="Cal navigation" class="cal-family-rail">
+<div class="cal-rail-group">Operating views</div>
+<a class="cal-rail-link active" data-cal-target="cal-command-center" href="#cal-command-center"><span class="cal-rail-icon">C</span><span>Command Center</span></a>
+<button class="cal-rail-link" data-cal-action="open-brief" type="button"><span class="cal-rail-icon">B</span><span>Morning Brief</span></button>
+<a class="cal-rail-link" data-cal-target="cal-decision-path" href="#cal-decision-path"><span class="cal-rail-icon">D</span><span>Decision Path</span></a>
+<div class="cal-rail-group">Product foundation</div>
+<a class="cal-rail-link" data-cal-target="cal-overview" href="#cal-overview"><span class="cal-rail-icon">O</span><span>Cal Overview</span></a>
+<a class="cal-rail-link" data-cal-target="cal-proof" href="#cal-proof"><span class="cal-rail-icon">P</span><span>Proof &amp; Guardrails</span></a>
+<a class="cal-rail-link" data-cal-target="cal-operator-model" href="#cal-operator-model"><span class="cal-rail-icon">M</span><span>Operator Model</span></a>
+<div class="cal-rail-foot"><b>Cal · an AtlasFlow platform</b><span>Messy request → trusted decision → accountable next action.</span></div>
+</aside><div class="cal-family-workspace"><main>
 <section aria-label="Product framing" class="section-pad slim">
-<figure aria-label="Interactive Cal Command Center" class="command-center-preview cal-cc-figure reveal">
+<figure aria-label="Interactive Cal Command Center" class="command-center-preview cal-cc-figure reveal cal-family-anchor" id="cal-command-center"><div class="cal-placement-note">Operating view · Field-service command center</div>
 <div class="cal-cc" id="calCommandCenter">
 <div class="cal-cc-header">
 <div>
@@ -778,16 +890,16 @@ main > .section-pad:first-of-type .section-heading h1{
 </section>
 </div>
 </figure>
-<section aria-labelledby="cal-thesis-title" class="cal-thesis-panel reveal">
+<section aria-labelledby="cal-thesis-title" class="cal-thesis-panel reveal cal-family-anchor" id="cal-overview"><div class="cal-placement-note on-dark">Product foundation · Cal overview</div>
 <div aria-hidden="true" class="cal-thesis-orb cal-thesis-orb-one"></div>
 <div aria-hidden="true" class="cal-thesis-orb cal-thesis-orb-two"></div>
 <div class="cal-thesis-content"><p class="cal-thesis-kicker cal-thesis-overview-kicker">Cal overview</p><p class="cal-thesis-overview">Cal is the service-request triage and owner-visibility layer around a plumbing team’s existing intake and dispatch workflow. It structures incoming requests, identifies urgency and risk, surfaces what needs attention, supports the human decision, and turns the daily queue into a clear owner operating brief.</p><p class="cal-thesis-kicker cal-thesis-product-kicker">Cal product thesis</p><h2 id="cal-thesis-title">Can Cal turn a messy service request into a trusted, prioritized human decision—and then ensure the right request, risk signal, next action, and owner attention are clearly surfaced before dispatch?</h2><div class="cal-thesis-rule"></div><div class="cal-thesis-validation"><p>Validation question</p><strong>Can Cal turn a messy service request into a trusted, prioritized human decision—and then ensure the right request, risk signal, next action, and owner attention are clearly surfaced before dispatch?</strong></div></div>
 </section>
-<section aria-labelledby="cal-proves-title" class="cal-proves-section reveal">
+<section aria-labelledby="cal-proves-title" class="cal-proves-section reveal cal-family-anchor" id="cal-proof"><div class="cal-placement-note">Product foundation · What Cal proves</div>
 <h2 id="cal-proves-title">Clarity before dispatch.</h2>
 <p>Built around the L.E. Isley &amp; Sons Plumbing workflow, Cal demonstrates a reusable AtlasFlow pattern for field service: a messy request becomes AI triage, a structured job record, Operational Viewer visibility, human review, and a clear recommended next action.</p>
 </section>
-<section aria-label="AtlasFlow Decision Path for Cal" class="cal-decision-path-section reveal">
+<section aria-label="AtlasFlow Decision Path for Cal" class="cal-decision-path-section reveal cal-family-anchor" id="cal-decision-path"><div class="cal-placement-note">Operating architecture · Decision path</div>
 <div class="cal-dp-shell" id="calDecisionPathCard">
 <div class="cal-dp-head">
 <div><span class="label">AtlasFlow Decision Path</span><p>A service request can become prioritized, dispatch-ready work automatically: Request → Customer record → Cal AI → Command Center → Human decision</p></div>
@@ -830,7 +942,7 @@ main > .section-pad:first-of-type .section-heading h1{
 </div>
 </section>
 <section aria-label="Cal operator model" class="section-pad slim reveal cal-operator-model-section" id="build-proof-carousel">
-<div class="cal-operator-model-shell">
+<div class="cal-operator-model-shell cal-family-anchor" id="cal-operator-model"><div class="cal-placement-note">Product foundation · Operator model</div>
 <div class="cal-operator-model-heading">
 <p class="eyebrow">Operator model</p>
 <p>This view shows how Cal routes plumbing service requests through intake, triage, review, and briefing so the office team can make informed decisions and take action.</p>
@@ -954,8 +1066,9 @@ main > .section-pad:first-of-type .section-heading h1{
 </div>
 </section>
 </div>
-</main>
-<footer class="site-footer cal-portfolio-footer"><div aria-label="Cal confidentiality and studio attribution" class="cal-footer-inner"><div class="cal-footer-item">Atlas Studios</div><div class="cal-footer-item">Cal Operational Viewer</div><div class="cal-footer-item">Confidential</div></div><a aria-label="Back to top" class="back-to-top cal-footer-back" href="#top">Back to top ↑</a></footer>
+</main><footer class="site-footer cal-portfolio-footer"><div aria-label="Cal confidentiality and studio attribution" class="cal-footer-inner"><div class="cal-footer-item">Atlas Studios</div><div class="cal-footer-item">Cal Operational Viewer</div><div class="cal-footer-item">Confidential</div></div><a aria-label="Back to top" class="back-to-top cal-footer-back" href="#top">Back to top ↑</a></footer></div></div>
+
+
 <script>
     // Reliable footer back-to-top behavior
     document.addEventListener("DOMContentLoaded", function () {
@@ -1300,6 +1413,53 @@ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded'
   if('IntersectionObserver' in window){var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){replay();observer.disconnect();}});},{threshold:.35});observer.observe(box);}
 })();
 </script>
-</body>
+<script id="cal-family-navigation">
+(function(){
+  function ready(fn){
+    if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
+    else fn();
+  }
+  ready(function(){
+    var links = Array.prototype.slice.call(document.querySelectorAll('.cal-rail-link'));
+    var anchored = links.filter(function(link){ return link.getAttribute('data-cal-target'); });
+    function activate(link){
+      links.forEach(function(x){ x.classList.toggle('active', x === link); });
+    }
+    anchored.forEach(function(link){
+      link.addEventListener('click', function(event){
+        var id = link.getAttribute('data-cal-target');
+        var target = document.getElementById(id);
+        if(!target) return;
+        event.preventDefault();
+        activate(link);
+        target.scrollIntoView({behavior:'smooth', block:'start'});
+        if(history.replaceState) history.replaceState(null,'','#'+id);
+      });
+    });
+    var briefLink = document.querySelector('[data-cal-action="open-brief"]');
+    if(briefLink){
+      briefLink.addEventListener('click', function(){
+        activate(briefLink);
+        var existing = document.getElementById('calMorningBriefBtn');
+        if(existing) existing.click();
+      });
+    }
+    if('IntersectionObserver' in window){
+      var observer = new IntersectionObserver(function(entries){
+        var visible = entries.filter(function(entry){ return entry.isIntersecting; })
+          .sort(function(a,b){ return b.intersectionRatio-a.intersectionRatio; });
+        if(!visible.length) return;
+        var id = visible[0].target.id;
+        var match = anchored.find(function(link){ return link.getAttribute('data-cal-target') === id; });
+        if(match) activate(match);
+      }, {rootMargin:'-18% 0px -62% 0px', threshold:[0,.08,.2,.4]});
+      anchored.forEach(function(link){
+        var target = document.getElementById(link.getAttribute('data-cal-target'));
+        if(target) observer.observe(target);
+      });
+    }
+  });
+})();
+</script></body>
 </html>
-<script async="" data-cookie-opt-in="true" data-deployment-id="dpl_GUHuHZdTdRyAovh4hFs17bnPfrQK" data-explicit-opt-in="true" src="https://vercel.live/_next-live/feedback/feedback.js"></script>
+<script async="" data-cookie-opt-in="true" data-deployment-id="dpl_GUHuHZdTdRyAovh4hFs17bnPfrQK" data-explicit-opt-in="true" src="https://vercel.live/_next-live/feedback/feedback.js"></script><script async="" data-cookie-opt-in="true" data-deployment-id="dpl_FCMjrN5h6uhhQnoGzHEcbPEWHySa" data-explicit-opt-in="true" src="https://vercel.live/_next-live/feedback/feedback.js"></script>
